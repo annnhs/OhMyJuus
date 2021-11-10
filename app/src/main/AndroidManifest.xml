@@ -24,6 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OhMyJuus">
         <activity
+            android:name=".UpdateMypageActivity"
+            android:exported="true" />
+        <activity
             android:name=".SignupActivity"
             android:exported="true" />
         <activity
@@ -37,9 +40,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
