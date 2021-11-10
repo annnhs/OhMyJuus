@@ -29,6 +29,7 @@ import kotlinx.android.synthetic.main.nav_header.view.*
 
 class MainActivity : AppCompatActivity() {
     //공경화
+    //정은빈
     lateinit var binding: ActivityMainBinding
 
     enum class LayoutItem {
