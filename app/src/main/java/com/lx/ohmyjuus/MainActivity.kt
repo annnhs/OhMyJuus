@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /////////////////////// login /////////////////////////
+        /////////////////////// login end /////////////////////////
 
 
         binding.navigationView.setNavigationItemSelectedListener {

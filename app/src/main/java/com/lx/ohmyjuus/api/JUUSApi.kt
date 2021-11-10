@@ -103,7 +103,7 @@ class JUUSClient {
         }
 
         // 기본 URL
-        private const val BASE_URL = "http://172.30.1.15:8001"
+        private const val BASE_URL = "http://172.30.1.15:9000"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
