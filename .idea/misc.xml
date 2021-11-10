@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_editprofile.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_hamburger.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_map.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/logo_white_big.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/shadow.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/signup_button.xml" value="0.1" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_map.xml" value="0.12777777777777777" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/nav_header.xml" value="0.22" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/nav_menu.xml" value="0.18775510204081633" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
