@@ -76,6 +76,11 @@ class MainActivity : AppCompatActivity() {
         val savedMobile = sharedPreference.getString("userMobile", "")
         binding.navigationView.getHeaderView(0).navId.text = savedNick
         binding.navigationView.getHeaderView(0).navName.text = savedName
+
+        if(savedId.isNullOrBlank() || savedNick.isNullOrBlank()) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
         // logout
         binding.navigationView.getHeaderView(0).navLogout.setOnClickListener {
             val editor = sharedPreference.edit()
