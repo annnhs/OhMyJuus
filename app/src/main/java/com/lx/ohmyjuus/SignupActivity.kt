@@ -3,6 +3,7 @@ package com.lx.ohmyjuus
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -47,8 +48,8 @@ class SignupActivity : AppCompatActivity() {
                 // 회원가입 성공 토스트 메세지 띄우기
                 Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
 
-                val sharedPreference = getSharedPreferences("USER", Context.MODE_PRIVATE)
-                val editor = sharedPreference.edit()
+                val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
+                val editor = sharedPrefs.edit()
                 editor.putString("userName", userName)
                 editor.putString("userMobile", userMobile)
 //                editor.putString("userNick", userNick)

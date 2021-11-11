@@ -3,6 +3,7 @@ package com.lx.ohmyjuus
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,20 +21,20 @@ class LoginActivity : AppCompatActivity() {
 
     val TAG: String = "LoginActivity"
 
-    // 쉐어드로부터 저장된 id, pw 가져오기
-    val sharedPreference = getSharedPreferences("USER", Context.MODE_PRIVATE)
+//    // 쉐어드로부터 저장된 id, pw 가져오기
+//    val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
 
-        if(sharedPreference.getString("userId", "").isNullOrBlank() || sharedPreference.getString("userPw", "").isNullOrBlank()) {
+        if(com.lx.ohmyjuus.SharedPreferences.getUserId(this).isNullOrBlank() || com.lx.ohmyjuus.SharedPreferences.getUserPass(this).isNullOrBlank()) {
             logInButton.setOnClickListener {
                 login()
             }
         } else {
-            Toast.makeText(this, "${sharedPreference.getString("userId", "")}님 " +
+            Toast.makeText(this, "${com.lx.ohmyjuus.SharedPreferences.getUserId(this)}님 " +
                     "자동로그인 되었습니다.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -82,14 +83,10 @@ class LoginActivity : AppCompatActivity() {
             userLogin(userId, userPw)
 
             // 유저가 입력한 id, pw를 쉐어드에 저장한다.
-            val editor = sharedPreference.edit()
-            editor.putString("userId", userId)
-            editor.putString("userPw", userPw)
-            editor.apply()
+            com.lx.ohmyjuus.SharedPreferences.setUserId(this, userId)
+            com.lx.ohmyjuus.SharedPreferences.setUserPass(this, userPw)
 
-//            val savedId = sharedPreference.getString("userId", "dong")
-//            val savedPw = sharedPreference.getString("userPw", "dong")
-//
+
 //            // 유저가 입력한 id, pw값과 쉐어드로 불러온 id, pw값 비교
 //            if(userId == savedId && userPw == savedPw){
 ////                getUserLogin(id, pw)
