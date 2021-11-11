@@ -1,30 +1,15 @@
 package com.lx.ohmyjuus
 
 import android.Manifest
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Looper
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.google.android.gms.location.*
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
 import com.lx.ohmyjuus.databinding.ActivityMainBinding
+import com.lx.ohmyjuus.jubging.JubgingActivity
 import com.permissionx.guolindev.PermissionX
 import kotlinx.android.synthetic.main.nav_header.view.*
 
@@ -82,7 +67,12 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.navMap -> {
-                    val intent = Intent(this, MapActivity::class.java)
+                    val intent = Intent(this, JubgingActivity::class.java)
+                    startActivity(intent)
+
+                }
+                R.id.navRecord -> {
+                    val intent = Intent(this, CalendarActivity::class.java)
                     startActivity(intent)
 
                 }

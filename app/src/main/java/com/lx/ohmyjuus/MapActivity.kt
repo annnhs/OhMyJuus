@@ -94,7 +94,7 @@ class MapActivity : AppCompatActivity() {
             title("내 위치")
             position(curPoint)
 //            icon(BitmapDescriptorFactory.fromResource(com.google.android.gms.location.R.drawable.location))
-            mymarkerObj = map.addMarker(mymarker)
+//            mymarkerObj = map.addMarker(mymarker)
         }
     }
 }
