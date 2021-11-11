@@ -46,12 +46,564 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/textView"
+                    <!--전체스크롤뷰-->
+                    <ScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="dddd" />
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <!--로그인 정보-->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true"> <!--  app:cardBackgroundColor="#FFFFFFFF" -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="300dp"
+                                        android:layout_height="70dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical"
+                                        android:weightSum="3">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical"
+                                            android:text="주어스와"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal|bold"></TextView>
+                                        <!--android:textAlignment="center" -->/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical"
+                                            android:text="5,18138453 걸음 함께 하셨어요!"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal|bold" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical">
+                                        <FrameLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="3dp">
+                                            <ImageButton
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:scaleType="fitXY" />
+                                            <!-- 프로그레스바 부분( 로딩표시생각 )
+                                            <ProgressBar
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/progressBar"
+                                                android:layout_gravity="center"
+                                                android:visibility="gone"/>-->
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <!--날씨 들어갈 카드섹션-->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="30dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="150dp"
+                                        android:layout_height="150dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical">
+                                        <FrameLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="3dp">
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:scaleType="fitXY" />
+                                            <ProgressBar
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:visibility="gone" />
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical"
+                                        android:weightSum="3">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="1"
+                                            android:text="날씨가 들어갈 카드뷰"
+                                            android:textAlignment="center"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal|bold" />
+                                        <TextView
+                                            android:id="@+id/tv_date"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="1"
+                                            android:text="TextView"
+                                            android:textAlignment="center"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal|bold" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <!--주어스기록 텍스트 파트-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:weightSum="3">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="주어스 기록" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="내 주변에서 주어스와 1231명이 함께하고 있어요"
+                                    android:textAlignment="center" />
+                            </LinearLayout>
+
+
+                            <!--주어스 기록의 보여주는 이미지 버튼과 뷰,호리존스크롤 적용-->
+                            <HorizontalScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <!--전체존-->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true"> <!--  app:cardBackgroundColor="#FFFFFFFF" -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <!--카드하나섹션-->
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="주어스 시작" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="주어스 기록" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+
+
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="주어스 기록" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                            </HorizontalScrollView>
+
+
+                            <!--주어스 첼린지 텍스트지만 원하면 합쳐드리지요-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical"
+                                        android:text="주어스 챌린지"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal|bold"></TextView>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <!--주어스첼린지 보여주기파트-->
+                            <HorizontalScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true"
+                                    android:background="@color/teal_700"> <!--  app:cardBackgroundColor="#FFFFFFFF" -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--이미지 버튼들 이미지뷰로 사용하기-->
+                                                <ImageButton
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:scaleType="fitXY" />
+                                            </FrameLayout>
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <ImageView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:scaleType="fitXY" />
+                                            </FrameLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <ImageButton
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:scaleType="fitXY" />
+                                                <ProgressBar
+                                                    android:id="@+id/progressBar"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:visibility="gone" />
+                                            </FrameLayout>
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="150dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:weightSum="3">
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="150dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:weightSum="3">
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </HorizontalScrollView>
+
+                            <!--줍깅 캠페인-->
+                            <!-- 텍스트지만 원하면 합쳐드리지요-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:id="@+id/tv_id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical"
+                                        android:text="줍깅 캠페인"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal|bold"></TextView>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+
+                            <!--줍깅캠페인 보여주기파트-->
+                            <HorizontalScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <!--전체존-->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="5dp"
+                                    app:cardUseCompatPadding="true"> <!--  app:cardBackgroundColor="#FFFFFFFF" -->
+                                    <LinearLayout
+                                        android:id="@+id/parentLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <!--카드하나섹션-->
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="캠페인 제목" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="캠페인 제목" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+
+
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+                                            <FrameLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="3dp">
+                                                <!--카드크기 조정필요 글씨와 맞춰서
+                                                이미지버튼 및 이미지뷰로 활용-->
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="vertical"
+                                                        android:weightSum="3">
+                                                        <ImageButton
+                                                            android:id="@+id/iv_img"
+                                                            android:layout_width="130dp"
+                                                            android:layout_height="match_parent"
+                                                            android:scaleType="fitXY" />
+                                                        <TextView
+                                                            android:id="@+id/detailviewitem_profile_textview"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="30dp"
+                                                            android:text="켐페인 제목" />
+                                                    </LinearLayout>
+                                                </androidx.cardview.widget.CardView>
+                                            </FrameLayout>
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                            </HorizontalScrollView>
+                        </LinearLayout>
+
+                    </ScrollView>
+                    <!--메인-->
                 </RelativeLayout>
             </LinearLayout>
 
