@@ -3,6 +3,7 @@ package com.lx.ohmyjuus
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -69,24 +70,18 @@ class MainActivity : AppCompatActivity() {
         /////////////////////// login /////////////////////////
 
         // 쉐어드로부터 저장된 id, pw 가져오기
-        val sharedPreference = getSharedPreferences("USER", Context.MODE_PRIVATE)
+//        val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
-        val savedId = sharedPreference.getString("userId", "")
-        val savedNick = sharedPreference.getString("userNick", "")
-        val savedName = sharedPreference.getString("userName", "")
-        val savedMobile = sharedPreference.getString("userMobile", "")
-        binding.navigationView.getHeaderView(0).navId.text = savedNick
-        binding.navigationView.getHeaderView(0).navName.text = savedName
+        val savedId = com.lx.ohmyjuus.SharedPreferences.getUserId(this)
+//        val savedNick = sharedPrefs.getString("userNick", "")
+//        val savedName = sharedPrefs.getString("userName", "")
+//        val savedMobile = sharedPrefs.getString("userMobile", "")
+//        binding.navigationView.getHeaderView(0).navId.text = savedNick
+//        binding.navigationView.getHeaderView(0).navName.text = savedName
 
-        if(savedId.isNullOrBlank() || savedNick.isNullOrBlank()) {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
         // logout
         binding.navigationView.getHeaderView(0).navLogout.setOnClickListener {
-            val editor = sharedPreference.edit()
-            editor.clear()
-            editor.commit()
+            com.lx.ohmyjuus.SharedPreferences.clearUser(this)
 
             // 로그인 화면으로 이동
             val intent = Intent(this, LoginActivity::class.java)
