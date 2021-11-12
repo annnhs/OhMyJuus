@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     //정은빈
     lateinit var binding: ActivityMainBinding
 
+
     enum class LayoutItem {
         POINT, CHALLENGE, COMMUNITY, MAP, RECORD, PROFILE
     }
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
 
                 }
+
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
