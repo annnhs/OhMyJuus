@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="main">#4C9FC4</color>
+    <color name="mainGradient">#365D92</color>
+    <color name="text1">#DDD</color>
+    <color name="text2">#979797</color>
+    <color name="invisible">#00ff0000</color>
 </resources>

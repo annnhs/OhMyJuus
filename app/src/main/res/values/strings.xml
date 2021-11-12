@@ -17,4 +17,6 @@
     <string name="request_location_updates">Request location updates</string>
     <string name="remove_location_updates">줍깅 멈추기</string>
     <string name="location_updated">오늘도 줍깅</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
