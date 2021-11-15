@@ -4,21 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
 import androidx.preference.PreferenceManager
-//import android.preference.PreferenceManager
-//import androidx.preference.PreferenceManager
-//import com.example.jubging.R
-import com.lx.ohmyjuus.jubging.JubgingActivity
-//import net.daum.mf.map.api.MapPoint
-import java.text.SimpleDateFormat
+import net.daum.mf.map.api.MapPoint
 import java.util.*
-import kotlin.math.*
-import com.lx.ohmyjuus.R
 
 
 class MyUtils {
     companion object {
 
-        //val pointList = ArrayList<MapPoint>()
+        val pointList = ArrayList<MapPoint>()
         var totalDist = 0.0
         var time = "0:00:00"
         var startToggle = false
@@ -71,10 +64,16 @@ class MyUtils {
             startToggle = false
             timerTask?.cancel()
             timerTask = null
-            //pointList.clear()
+            pointList.clear()
 
 
         }
+
+        fun capture() {
+            activity?.clickCapture()
+        }
+
+
         private fun deg2rad(deg: Double): Double {
             return (deg * Math.PI / 180.0)
         }
@@ -94,23 +93,23 @@ class MyUtils {
             return dist
         }
 
-//        fun pushNewPoint(location: Location?) {
-//            if (location != null) {
-//                if (pointList.size > 0) {
-//                    val lastLocation = pointList.last().mapPointGeoCoord
-//                    val dist = getDistance(lastLocation.latitude, lastLocation.longitude, location.latitude, location.longitude)
-//
-//                    if (dist >= 0) {
-//                        val newPoint = MapPoint.mapPointWithGeoCoord(location.latitude, location.longitude)
-//                        pointList.add(newPoint)
-//                        totalDist += dist
-//                    }
-//                } else {
-//                    val newPoint = MapPoint.mapPointWithGeoCoord(location.latitude, location.longitude)
-//                    pointList.add(newPoint)
-//                }
-//            }
-//        }
+        fun pushNewPoint(location: Location?) {
+            if (location != null) {
+                if (pointList.size > 0) {
+                    val lastLocation = pointList.last().mapPointGeoCoord
+                    val dist = getDistance(lastLocation.latitude, lastLocation.longitude, location.latitude, location.longitude)
+
+                    if (dist >= 0) {
+                        val newPoint = MapPoint.mapPointWithGeoCoord(location.latitude, location.longitude)
+                        pointList.add(newPoint)
+                        totalDist += dist
+                    }
+                } else {
+                    val newPoint = MapPoint.mapPointWithGeoCoord(location.latitude, location.longitude)
+                    pointList.add(newPoint)
+                }
+            }
+        }
 
         const val KEY_REQUESTING_LOCATION_UPDATES = "requesting_location_updates"
 

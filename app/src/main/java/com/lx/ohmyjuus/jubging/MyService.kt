@@ -13,6 +13,7 @@ import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.gms.location.*
 import com.lx.ohmyjuus.MainActivity
+import com.lx.ohmyjuus.R
 
 class MyService : Service() {
     private val EXTRA_STARTED_FROM_NOTIFICATION = "$PACKAGE_NAME.started_from_notification"
@@ -35,7 +36,7 @@ class MyService : Service() {
     private var mLocation: Location? = null
 
     companion object {
-        const val PACKAGE_NAME = "com.example.jubging"
+        const val PACKAGE_NAME = "com.lx.ohmyjuus"
         const val EXTRA_LOCATION = "$PACKAGE_NAME.location"
         const val ACTION_BROADCAST = "$PACKAGE_NAME.broadcast"
     }
@@ -59,8 +60,7 @@ class MyService : Service() {
         mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = null
-//            : CharSequence = getString(R.string.app_name)
+            val name: CharSequence = getString(R.string.app_name)
             val mChannel = NotificationChannel(CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT)
             mNotificationManager.createNotificationChannel(mChannel)
         }
@@ -129,12 +129,12 @@ class MyService : Service() {
     @SuppressLint("MissingPermission")
     fun requestLocationUpdates() {
         Log.i(TAG, "Requesting Location updates")
-//        MyUtils.setRequestingLocationUpdates(this, true)
+        MyUtils.setRequestingLocationUpdates(this, true)
         startService(Intent(applicationContext, MyService::class.java))
         try{
             mFusedLocationClient?.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper())
         }catch (unlikely: SecurityException) {
-//            MyUtils.setRequestingLocationUpdates(this, false)
+            MyUtils.setRequestingLocationUpdates(this, false)
             Log.e(TAG, "Lost location permission. Could not request updates. $unlikely")
         }
     }
@@ -145,10 +145,10 @@ class MyService : Service() {
         Log.i(TAG, "Removing location updates")
         try {
             mFusedLocationClient?.removeLocationUpdates(mLocationCallback)
-//            MyUtils.setRequestingLocationUpdates(this, false)
+            MyUtils.setRequestingLocationUpdates(this, false)
             stopSelf()
         } catch (unlikely: SecurityException) {
-//            MyUtils.setRequestingLocationUpdates(this, true)
+            MyUtils.setRequestingLocationUpdates(this, true)
             Log.e(TAG, "Lost location permission. Could not remove updates. $unlikely")
         }
     }
@@ -157,20 +157,20 @@ class MyService : Service() {
     private fun getNotification(): Notification {
 
         val intent:Intent = Intent(this, MyService::class.java)
-//        MyUtils.pushNewPoint(mLocation)
+        MyUtils.pushNewPoint(mLocation)
         val text:CharSequence = "시간: "+MyUtils.time+", 거리: "+String.format("%.2f", MyUtils.totalDist)+" km"
         intent.putExtra(EXTRA_STARTED_FROM_NOTIFICATION, true)
 
-        val servicePendingIntent: PendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+//        val servicePendingIntent: PendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val activityPendingIntent = PendingIntent.getActivity(this, 0, Intent(this, MainActivity::class.java), 0)
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-//            .addAction(R.drawable.common_google_signin_btn_icon_dark, getString(R.string.launch_activity), activityPendingIntent)
+            .addAction(R.drawable.common_google_signin_btn_icon_dark, getString(R.string.launch_activity), activityPendingIntent)
 //            .addAction(R.drawable.common_google_signin_btn_icon_light, getString(R.string.remove_location_updates), servicePendingIntent)
             .setContentText(text)
 //            .setContentTitle(MyUtils.getLocationTitle(this).toString())
             .setOngoing(true)
             .setPriority(Notification.PRIORITY_MAX)
-//            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.mipmap.ic_launcher)
             .setTicker(text)
             .setWhen(System.currentTimeMillis())
 

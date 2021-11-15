@@ -1,7 +1,6 @@
 package com.lx.ohmyjuus.jubging
 
-//import com.example.jubging.BuildConfig
-//import net.daum.mf.map.api.*
+
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -11,6 +10,7 @@ import android.content.pm.PackageManager
 import android.graphics.*
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.provider.Settings
@@ -26,19 +26,21 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.GoogleMap.SnapshotReadyCallback
 import com.google.android.gms.maps.model.*
 import com.google.android.material.snackbar.Snackbar
+import com.lx.ohmyjuus.MainActivity
 import com.lx.ohmyjuus.R
 import com.lx.ohmyjuus.databinding.ActivityJubgingBinding
-import com.lx.ohmyjuus.jubging.MyService
 import com.lx.ohmyjuus.jubging.MyUtils.Companion.activity
-import java.io.FileOutputStream
+import java.io.*
 import java.util.*
 import kotlin.math.*
 
 
+
 class JubgingActivity : AppCompatActivity()
- ,  SharedPreferences.OnSharedPreferenceChangeListener,
-View.OnClickListener, LocationListener, OnMapReadyCallback,
-GoogleMap.OnMarkerClickListener
+    ,  SharedPreferences.OnSharedPreferenceChangeListener,
+    View.OnClickListener, LocationListener, OnMapReadyCallback
+
+    ,GoogleMap.OnMarkerClickListener
 {
 
     private val REQUEST_PERMISSIONS_REQUEST_CODE = 34
@@ -163,6 +165,26 @@ GoogleMap.OnMarkerClickListener
             this,
             Manifest.permission.ACCESS_FINE_LOCATION
         )
+
+
+        //스냅샷 퍼미션
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 마시멜로우 버전과 같거나 이상이라면
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) !== PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) !== PackageManager.PERMISSION_GRANTED
+            ) {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                }
+                requestPermissions(
+                    arrayOf(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    ),
+                    2
+                ) //마지막 인자는 체크해야될 권한 갯수
+            } else {
+            }
+        }
+
     }
 
     private fun requestPermissions() {
@@ -173,18 +195,18 @@ GoogleMap.OnMarkerClickListener
 
         if (shouldProvideRationale) {
             Log.i(TAG, "Displaying permission rationale to provide additional context.")
-//            Snackbar.make(
-////                findViewById(R.id.activity_main),
-//                R.string.permission_rationale,
-//                Snackbar.LENGTH_INDEFINITE
-//            )
-//                .setAction(R.string.ok) { // Request permission
-//                    ActivityCompat.requestPermissions(
-//                        this@JubgingActivity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-//                        REQUEST_PERMISSIONS_REQUEST_CODE
-//                    )
-//                }
-//                .show()
+            Snackbar.make(
+                findViewById(R.id.drawerLayout),
+                R.string.permission_rationale,
+                Snackbar.LENGTH_INDEFINITE
+            )
+                .setAction(R.string.ok) { // Request permission
+                    ActivityCompat.requestPermissions(
+                        this@JubgingActivity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        REQUEST_PERMISSIONS_REQUEST_CODE
+                    )
+                }
+                .show()
         } else {
             Log.i(TAG, "Requesting permission")
             ActivityCompat.requestPermissions(
@@ -208,18 +230,18 @@ GoogleMap.OnMarkerClickListener
                 // Permission was granted.
                 mService!!.requestLocationUpdates()
             } else {
-//                Snackbar.make(
-////                    findViewById(R.id.activity_main),
-//                    R.string.permission_denied_explanation,
-//                    Snackbar.LENGTH_INDEFINITE
-//                )
-//                    .setAction(R.string.settings) {
-//                        val intent = Intent()
-//                        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-//                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//                        startActivity(intent)
-//                    }
-//                    .show()
+                Snackbar.make(
+                    findViewById(R.id.drawerLayout),
+                    R.string.permission_denied_explanation,
+                    Snackbar.LENGTH_INDEFINITE
+                )
+                    .setAction(R.string.settings) {
+                        val intent = Intent()
+                        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                    }
+                    .show()
             }
         }
     }
@@ -234,7 +256,7 @@ GoogleMap.OnMarkerClickListener
             val location = intent!!.getParcelableExtra<Location>(MyService.EXTRA_LOCATION)
             if (location != null) {
 
-//                MyUtils.pushNewPoint(location)
+                MyUtils.pushNewPoint(location)
                 drawPolyline(latLngList)
                 binding.distance.text = String.format("%.2f", MyUtils.totalDist)
 
@@ -250,7 +272,7 @@ GoogleMap.OnMarkerClickListener
                         requestPermissions()
                     } else {
                         changeCallback(locCallback, locCallback_walk, true)
-                        mService?.requestLocationUpdates()
+                        mService!!.requestLocationUpdates()
                         binding.btnStart.text = "줍깅 종료"
                         MyUtils.startJubging()
 
@@ -258,7 +280,7 @@ GoogleMap.OnMarkerClickListener
 
                     }
                 } else {
-                    val dialog = myDialogFragment(object: myDialogFragment.OnClickDialogListener {
+                    val dialog = FiinishDialogFragment(object: FiinishDialogFragment.OnClickDialogListener {
                         override fun onClickPositive(address: String) {
 
                             val jubgingInfo = address +"/"+binding.time.text+"/"+binding.distance.text
@@ -281,8 +303,9 @@ GoogleMap.OnMarkerClickListener
                     })
 
                     changeCallback(locCallback_walk, locCallback, false)
-//                    mOnCaptureClick(mapView)
-                    CaptureMapScreen()
+
+
+
                     dialog.show(supportFragmentManager, "myDialog")
                 }
             }
@@ -303,7 +326,6 @@ GoogleMap.OnMarkerClickListener
             }
         }
     }
-
 
 
 
@@ -353,7 +375,7 @@ GoogleMap.OnMarkerClickListener
         super.onStart()
         mapView!!.onStart()
         startLocationUpdates()
-                PreferenceManager.getDefaultSharedPreferences(this)
+        PreferenceManager.getDefaultSharedPreferences(this)
             .registerOnSharedPreferenceChangeListener(this)
 
         bindService(
@@ -366,7 +388,7 @@ GoogleMap.OnMarkerClickListener
         super.onResume()
         mapView!!.onResume()
         startLocationUpdates()
-                LocalBroadcastManager.getInstance(this).registerReceiver(
+        LocalBroadcastManager.getInstance(this).registerReceiver(
             myReceiver!!,
             IntentFilter(MyService.ACTION_BROADCAST)
         )
@@ -390,7 +412,7 @@ GoogleMap.OnMarkerClickListener
             }
         }
         locCallback_walk = object : LocationCallback() {
-            // 산책
+            // 줍깅
             override fun onLocationResult(locationResult: LocationResult) {
                 if (locationResult == null) return
                 latLngList.add(curLatlng!!)
@@ -482,66 +504,42 @@ GoogleMap.OnMarkerClickListener
     }
 
 
-//    //캡쳐버튼클릭
-//    fun mOnCaptureClick(v: View?) {
-//        //전체화면
-//        val rootView = findViewById<View>(R.id.mapView) as MapView
-//        val screenShot = ScreenShot(rootView)
-//        if (screenShot != null) {
-//            //갤러리에 추가
-//            sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)))
-//        }
-//    }
-//
-//    //화면 캡쳐하기
-//    fun ScreenShot(view: View): File? {
-//        view.isDrawingCacheEnabled = true //화면에 뿌릴때 캐시를 사용하게 한다
-//        val screenBitmap = view.drawingCache //캐시를 비트맵으로 변환
-//        val filename = "screenshot.png"
-//        val file = File(
-//            Environment.getExternalStorageDirectory().toString() + "/Pictures",
-//            filename
-//        ) //Pictures폴더 screenshot.png 파일
-//        var os: FileOutputStream? = null
-//        try {
-//            os = FileOutputStream(file)
-//            screenBitmap.compress(Bitmap.CompressFormat.PNG, 90, os) //비트맵을 PNG파일로 변환
-//            os.close()
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//            return null
-//        }
-//        view.isDrawingCacheEnabled = false
-//        return file
-//    }
+//스냅샷 관련
 
+    fun clickCapture() {
 
-    fun CaptureMapScreen() {
-        val callback: SnapshotReadyCallback = object : SnapshotReadyCallback {
-            var bitmap: Bitmap? = null
-            override fun onSnapshotReady(snapshot: Bitmap?) {
-                // TODO Auto-generated method stub
-                bitmap = snapshot
-                try {
-                    val out = FileOutputStream(
-                        "/mnt/sdcard/"
-                                + "MyMapScreen" + System.currentTimeMillis()
-                                + ".png"
-                    )
-
-                    // above "/mnt ..... png" => is a storage path (where image will be stored) + name of image you can customize as per your Requirement
-                    bitmap!!.compress(Bitmap.CompressFormat.PNG, 90, out)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
+        val callback =
+            SnapshotReadyCallback { bitmap ->
+                screenshot(bitmap)
             }
-        }
         mMap?.snapshot(callback)
 
-        // myMap is object of GoogleMap +> GoogleMap myMap;
-        // which is initialized in onCreate() =>
-        // myMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_pass_home_call)).getMap();
+
+        val goHome = Intent(applicationContext, MainActivity::class.java)
+        startActivity(goHome)
+
+        if (latLngList.size > 0) latLngList.clear()
+        if (polyline != null) polyline!!.remove()
     }
 
+
+    fun screenshot(captureBitmap: Bitmap?): String {
+        val fos: FileOutputStream
+        val file = File("/storage/emulated/0/Pictures/", "Jubging") // 폴더 경로
+
+        if (!file.exists()) {  // 해당 폴더 없으면 만들어라
+            file.mkdirs()
+        }
+        val strFilePath = "/storage/emulated/0/Pictures/Jubging/" + System.currentTimeMillis()+".png"
+
+        val fileCacheItem = File(strFilePath)
+        try {
+            fos = FileOutputStream(fileCacheItem)
+            captureBitmap!!.compress(Bitmap.CompressFormat.PNG, 100, fos)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+        return strFilePath
+    }
     
 }

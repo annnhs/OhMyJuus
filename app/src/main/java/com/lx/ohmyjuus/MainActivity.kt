@@ -41,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
 
+        binding.goJubgingBtn.setOnClickListener {
+            val intent = Intent(this, JubgingActivity::class.java)
+            startActivity(intent)
+        }
+
+
         /////////////////////// login /////////////////////////
 
         // 쉐어드로부터 저장된 id, pw 가져오기
