@@ -16,10 +16,10 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.afollestad.assent.BuildConfig
 import com.afollestad.assent.Permission
 import com.afollestad.assent.askForPermissions
 import com.lx.ohmyjuus.api.BasicClient
+import com.lx.ohmyjuus.databinding.ActivityMainBinding
 import com.lx.ohmyjuus.databinding.ActivityPhotoBinding
 import com.lx.ohmyjuus.response.FileUploadResponse
 import okhttp3.MediaType
@@ -32,15 +32,14 @@ import retrofit2.Response
 import java.io.File
 
 class PhotoActivity: AppCompatActivity() {
-
     lateinit var binding: ActivityPhotoBinding
 
     val outputFilename = "photo.jpg"
     lateinit var outputFile: File
 
-    lateinit var takePictureLauncher: ActivityResultLauncher<Intent>
+    lateinit var takePictureLauncher:ActivityResultLauncher<Intent>
 
-//    lateinit var pickAlbumLauncher: ActivityResultLauncher<Intent>
+//    lateinit var pickAlbumLauncher:ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +59,7 @@ class PhotoActivity: AppCompatActivity() {
                 }
             }
         }
-//
+
 //        // 앨범에서선택 인텐트 등록
 //        pickAlbumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
 //            if (result.resultCode == Activity.RESULT_OK) {
@@ -74,7 +73,7 @@ class PhotoActivity: AppCompatActivity() {
         binding.takePictureButton.setOnClickListener {
             takePicture()
         }
-
+//
 //        // 앨범에서선택 버튼 클릭
 //        binding.pickAlbumButton.setOnClickListener {
 //            pickAlbum()
@@ -87,7 +86,7 @@ class PhotoActivity: AppCompatActivity() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { captureIntent ->
             outputFile = getPhotoFile()
 
-            val providerFile = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID, outputFile)
+            val providerFile = FileProvider.getUriForFile(this, "com.lx.ohmyjuus", outputFile)
             captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, providerFile)
 
             captureIntent.resolveActivity(packageManager)?.also {
@@ -97,6 +96,7 @@ class PhotoActivity: AppCompatActivity() {
             }
         }
 
+        finish()
     }
 
     fun getPhotoFile(): File {
@@ -121,10 +121,10 @@ class PhotoActivity: AppCompatActivity() {
         // 파일 업로드 테스트
         uploadFile(outputFile.absolutePath)
     }
-
+//
 //    fun pickAlbum() {
 //
-//        Intent(Intent.ACTION_PICK).also { pickIntent ->
+//        Intent(ACTION_PICK).also { pickIntent ->
 //            pickIntent.type = "image/*"
 //
 //            pickIntent.resolveActivity(packageManager)?.also {
