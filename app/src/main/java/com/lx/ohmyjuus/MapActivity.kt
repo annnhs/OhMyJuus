@@ -1,9 +1,13 @@
 package com.lx.ohmyjuus
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.view.View
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,6 +15,12 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.lx.ohmyjuus.databinding.ActivityMapBinding
 
 class MapActivity : AppCompatActivity() {
@@ -40,6 +50,7 @@ class MapActivity : AppCompatActivity() {
 
             requestLocation()
         }
+
 
     }
 

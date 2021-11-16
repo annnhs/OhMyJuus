@@ -30,7 +30,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -63,72 +63,21 @@
                         android:text="함께 하셨어요 !" />
                 </LinearLayout>
 
-                <!--                날씨 카드뷰-->
+                <!--날씨 들어갈 카드섹션-->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/weatherCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="300dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="35dp"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-                        <LinearLayout
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
-                            android:gravity="center_vertical"
-                            android:orientation="vertical">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="3dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:scaleType="fitXY" />
-
-                                <ProgressBar
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:visibility="gone" />
-                            </FrameLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_marginLeft="5dp"
-                            android:gravity="center_vertical"
-                            android:orientation="vertical"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="날씨가 들어갈 카드뷰"
-                                android:textAlignment="center"
-                                android:textSize="14sp"
-                                android:textStyle="normal|bold" />
-
-                            <TextView
-                                android:id="@+id/tv_date"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textAlignment="center"
-                                android:textSize="14sp"
-                                android:textStyle="normal|bold" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!--                주어스 기록-->
@@ -450,8 +399,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:progress="70"
                                         android:elevation="5dp"
+                                        android:progress="70"
                                         android:progressDrawable="@drawable/custom_progressbar" />
 
                                 </LinearLayout>
@@ -478,8 +427,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:progress="60"
                                         android:elevation="5dp"
+                                        android:progress="60"
                                         android:progressDrawable="@drawable/custom_progressbar" />
 
                                 </LinearLayout>
@@ -506,8 +455,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
-                                        android:progress="40"
                                         android:elevation="5dp"
+                                        android:progress="40"
                                         android:progressDrawable="@drawable/custom_progressbar" />
 
                                 </LinearLayout>
@@ -534,8 +483,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
-                                        android:progress="20"
                                         android:elevation="5dp"
+                                        android:progress="20"
                                         android:progressDrawable="@drawable/custom_progressbar" />
 
                                 </LinearLayout>
@@ -649,9 +598,9 @@
                                             android:layout_width="100dp"
                                             android:layout_height="100dp"
                                             android:layout_gravity="center"
-                                            android:padding="10dp"
                                             android:layout_weight="1"
                                             android:background="@color/white"
+                                            android:padding="10dp"
                                             android:src="@drawable/edit_text_bg" />
 
                                         <TextView
@@ -685,9 +634,9 @@
                                             android:layout_width="100dp"
                                             android:layout_height="100dp"
                                             android:layout_gravity="center"
-                                            android:padding="10dp"
                                             android:layout_weight="1"
                                             android:background="@color/white"
+                                            android:padding="10dp"
                                             android:src="@drawable/edit_text_bg" />
 
                                         <TextView

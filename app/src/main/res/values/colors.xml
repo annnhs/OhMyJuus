@@ -13,4 +13,12 @@
     <color name="text1">#DDD</color>
     <color name="text2">#979797</color>
     <color name="invisible">#00ff0000</color>
+
+
+    <color name="colorPrimary">#125688</color>
+    <color name="colorPrimaryDark">#125688</color>
+    <color name="colorAccent">#c8e8ff</color>
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="navigationBarColor">#000000</color>
 </resources>

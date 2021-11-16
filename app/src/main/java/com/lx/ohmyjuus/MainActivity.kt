@@ -1,23 +1,43 @@
 package com.lx.ohmyjuus
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.viewpager.widget.ViewPager
 import com.google.android.gms.location.*
+import com.google.android.material.snackbar.Snackbar
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.lx.ohmyjuus.databinding.ActivityMainBinding
 import com.lx.ohmyjuus.jubging.JubgingActivity
+import com.lx.ohmyjuus.weather.Adapter.ViewPagerAdapter
+import com.lx.ohmyjuus.weather.Common.Common
+import com.lx.ohmyjuus.weather.TodayWeatherFragment
 import com.permissionx.guolindev.PermissionX
 import kotlinx.android.synthetic.main.nav_header.view.*
 
 class MainActivity : AppCompatActivity() {
-    //공경화
-    //정은빈
-    lateinit var binding: ActivityMainBinding
 
+    //공경화
+    private var viewPager: ViewPager? = null
+    lateinit var binding: ActivityMainBinding
+    private var drawerLayout: DrawerLayout? = null
+    private var locationRequest: LocationRequest? = null
+    private var fusedLocationProviderClient: FusedLocationProviderClient? = null
+    private var locationCallback: LocationCallback? = null
 
     enum class LayoutItem {
         POINT, CHALLENGE, COMMUNITY, MAP, RECORD, PROFILE
@@ -103,10 +123,79 @@ class MainActivity : AppCompatActivity() {
 
         ////////////ㄱㄱㅎ////////////
 
+        drawerLayout = findViewById<View>(R.id.drawerLayout) as DrawerLayout
+
+        //Request permission
+
+        //Request permission
+
+        //Request permission
+        Dexter.withActivity(this)
+            .withPermissions(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            .withListener(object : MultiplePermissionsListener {
+                @SuppressLint("MissingPermission")
+                override fun onPermissionsChecked(report: MultiplePermissionsReport) {
+                    if (report.areAllPermissionsGranted()) {
+                        buildLocationRequest()
+                        buildLocationCallBack()
+                        fusedLocationProviderClient =
+                            LocationServices.getFusedLocationProviderClient(this@MainActivity)
+                        fusedLocationProviderClient?.requestLocationUpdates(
+                            locationRequest,
+                            locationCallback,
+                            Looper.myLooper()
+                        )
+                    }
+                }
+
+                override fun onPermissionRationaleShouldBeShown(
+                    permissions: List<PermissionRequest>,
+                    token: PermissionToken
+                ) {
+                    Snackbar.make(drawerLayout!!, "Permission Denied", Snackbar.LENGTH_LONG)
+                        .show()
+                }
+            }).check()
+
 
     }
 
+    private fun buildLocationCallBack() {
+        locationCallback = object : LocationCallback() {
+            @SuppressLint("WrongViewCast")
+            override fun onLocationResult(locationResult: LocationResult) {
+                super.onLocationResult(locationResult)
+                Common.current_location = locationResult.lastLocation
+                viewPager = findViewById<View>(R.id.view_pager) as ViewPager
+                setupViewPager(viewPager!!)
+                //                tabLayout = (TabLayout)findViewById(R.id.tabs);
+//                tabLayout.setupWithViewPager(viewPager);
 
+                // Log
+                Log.d(
+                    "Location",
+                    locationResult.lastLocation.latitude.toString() + "/" + locationResult.lastLocation.longitude
+                )
+            }
+        }
+    }
+
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(TodayWeatherFragment.getInstance(), "Today")
+        viewPager.adapter = adapter
+    }
+
+    private fun buildLocationRequest() {
+        locationRequest = LocationRequest()
+        locationRequest!!.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+        locationRequest!!.setInterval(5000)
+        locationRequest!!.setFastestInterval(3000)
+        locationRequest!!.setSmallestDisplacement(10.0f)
+    }
 
     fun onLayoutSelected(item: MainActivity.LayoutItem, bundle: Bundle?=null) {
         when(item) {

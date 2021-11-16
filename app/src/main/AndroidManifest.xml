@@ -65,6 +65,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCV2UdJTEJHLS1HV4nuyGTZgE5BDRbbc5M" />
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="52687ee17a411663d296e4faf8ac59b3"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider>
+
+
     </application>
 
 </manifest>
