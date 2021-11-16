@@ -313,20 +313,20 @@ class JubgingActivity : AppCompatActivity()
 
 
             R.id.btn_tracking -> {
-                if (isTracking) {
-                    isTracking = false
-                    binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_not_fixed_24)
-                } else {
-                    isTracking = true
-
+//                if (isTracking) {
+//                    isTracking = false
+//                    binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_not_fixed_24)
+//                } else {
+//                    isTracking = true
+//
 
                     binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_fixed_24)
 
                     mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatlng!!, 18f))
 //                    if (MyUtils.pointList.isNotEmpty())
 //                        mMap.setMapCenterPoint(MyUtils.pointList.last(), false)
-
-                }
+//
+//                }
             }
         }
     }
