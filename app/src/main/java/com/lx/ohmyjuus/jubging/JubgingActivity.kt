@@ -13,6 +13,7 @@ import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
+import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.view.View
@@ -317,10 +318,13 @@ class JubgingActivity : AppCompatActivity()
                     binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_not_fixed_24)
                 } else {
                     isTracking = true
+
+
                     binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_fixed_24)
 
+                    mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatlng!!, 18f))
 //                    if (MyUtils.pointList.isNotEmpty())
-//                        mapView.setMapCenterPoint(MyUtils.pointList.last(), false)
+//                        mMap.setMapCenterPoint(MyUtils.pointList.last(), false)
 
                 }
             }
@@ -358,6 +362,8 @@ class JubgingActivity : AppCompatActivity()
         }
         if (!isWalk) fusedLocClient!!.removeLocationUpdates(callback1)
         fusedLocClient!!.requestLocationUpdates(locRequest, callback2, null)
+
+        setCurMarker()
     }
 
 
@@ -419,6 +425,8 @@ class JubgingActivity : AppCompatActivity()
                 drawPolyline(latLngList)
             }
         }
+
+
     }
 
 
@@ -434,7 +442,7 @@ class JubgingActivity : AppCompatActivity()
         ) {
             return
         }
-        fusedLocClient!!.requestLocationUpdates(locRequest, locCallback, null)
+        fusedLocClient!!.requestLocationUpdates(locRequest, locCallback, Looper.myLooper())
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -450,6 +458,11 @@ class JubgingActivity : AppCompatActivity()
         bitmap_juus = Bitmap.createScaledBitmap(bitmap_juus!!, 120, 120, false)
         marker_juus = BitmapDescriptorFactory.fromBitmap(bitmap_juus)
         setCurMarker()
+
+
+        mMap?.setOnMarkerClickListener(this)
+
+
     }
 
     //초기 위치 설정
@@ -498,9 +511,11 @@ class JubgingActivity : AppCompatActivity()
 
 
     override fun onMarkerClick(marker: Marker): Boolean {
-        val center = CameraUpdateFactory.newLatLng(marker.position)
-        mMap!!.animateCamera(center)
-        return false
+
+        val goPhoto = Intent(applicationContext, PhotoActivity::class.java)
+        startActivity(goPhoto)
+
+        return true
     }
 
 

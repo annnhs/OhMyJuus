@@ -18,7 +18,23 @@
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/nav_menu.xml" value="0.18775510204081633" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/border.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/cell.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_hamburger.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_map.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/logo_white_small.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_badge04.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_point_look.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_point_use.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/login_button.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/login_signup.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/logo_main_.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/logo_name.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/logo_white_big.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/logo_white_small.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/main_newjuus.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/main_newjuus_txt.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/side_nav_bar.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/vie_bg.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_challenge.xml" value="0.20625" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_jubging.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
@@ -27,6 +43,7 @@
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_forecast.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_today_weather.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/nav_menu.xml" value="0.20625" />
+        <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.38229166666666664" />
       </map>
     </option>
   </component>

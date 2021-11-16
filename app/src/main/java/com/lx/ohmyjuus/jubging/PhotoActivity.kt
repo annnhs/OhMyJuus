@@ -39,7 +39,8 @@ class PhotoActivity: AppCompatActivity() {
     lateinit var outputFile: File
 
     lateinit var takePictureLauncher: ActivityResultLauncher<Intent>
-    lateinit var pickAlbumLauncher: ActivityResultLauncher<Intent>
+
+//    lateinit var pickAlbumLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,25 +60,25 @@ class PhotoActivity: AppCompatActivity() {
                 }
             }
         }
-
-        // 앨범에서선택 인텐트 등록
-        pickAlbumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                result.data?.apply {
-                    handlePickResult(this)
-                }
-            }
-        }
+//
+//        // 앨범에서선택 인텐트 등록
+//        pickAlbumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//            if (result.resultCode == Activity.RESULT_OK) {
+//                result.data?.apply {
+//                    handlePickResult(this)
+//                }
+//            }
+//        }
 
         // 사진찍기 버튼 클릭
         binding.takePictureButton.setOnClickListener {
             takePicture()
         }
 
-        // 앨범에서선택 버튼 클릭
-        binding.pickAlbumButton.setOnClickListener {
-            pickAlbum()
-        }
+//        // 앨범에서선택 버튼 클릭
+//        binding.pickAlbumButton.setOnClickListener {
+//            pickAlbum()
+//        }
 
     }
 
@@ -121,19 +122,19 @@ class PhotoActivity: AppCompatActivity() {
         uploadFile(outputFile.absolutePath)
     }
 
-    fun pickAlbum() {
-
-        Intent(Intent.ACTION_PICK).also { pickIntent ->
-            pickIntent.type = "image/*"
-
-            pickIntent.resolveActivity(packageManager)?.also {
-                pickAlbumLauncher.launch(pickIntent)
-            } ?:run {
-                Log.e("Main", "Cannot open album app.")
-            }
-        }
-
-    }
+//    fun pickAlbum() {
+//
+//        Intent(Intent.ACTION_PICK).also { pickIntent ->
+//            pickIntent.type = "image/*"
+//
+//            pickIntent.resolveActivity(packageManager)?.also {
+//                pickAlbumLauncher.launch(pickIntent)
+//            } ?:run {
+//                Log.e("Main", "Cannot open album app.")
+//            }
+//        }
+//
+//    }
 
     @TargetApi(19)
     fun handlePickResult(data: Intent) {

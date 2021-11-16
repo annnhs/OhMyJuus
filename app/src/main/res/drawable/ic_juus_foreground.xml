@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.3144304"
+      android:scaleY="0.3144304"
+      android:translateX="29.16"
+      android:translateY="38.27848">
+    <path
+        android:pathData="M41.367,21.632C41.367,9.685 51.051,0 62.998,0H109.321C125.89,0 139.321,13.432 139.321,30V40.127C139.321,41.004 139.552,41.867 139.991,42.627L155.263,69.078C160.898,78.838 157.554,91.319 147.793,96.954C138.033,102.59 125.552,99.246 119.916,89.485L112.13,75.998C110.486,73.151 106.589,72.638 104.264,74.962L87.106,92.12C79.136,100.09 66.215,100.09 58.246,92.12C50.276,84.151 50.276,71.23 58.246,63.26L69.707,51.799C72.857,48.649 70.626,43.263 66.172,43.263H62.998C51.051,43.263 41.367,33.578 41.367,21.632Z"
+        android:fillColor="#4C9FC4"
+        android:fillType="evenOdd"/>
+    <path
+        android:pathData="M55.123,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M55.123,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M55.123,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M67.367,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M67.367,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M67.367,16.205m-3.961,0a3.961,3.961 0,1 1,7.921 0a3.961,3.961 0,1 1,-7.921 0"
+        android:fillColor="#000000"/>
+    <path
+        android:pathData="M17.603,80.973m-17.603,0a17.603,17.603 0,1 1,35.206 0a17.603,17.603 0,1 1,-35.206 0"
+        android:fillColor="#4C9FC4"/>
+  </group>
+</vector>
