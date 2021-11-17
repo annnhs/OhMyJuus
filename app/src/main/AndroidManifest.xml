@@ -51,7 +51,6 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:label="SplashActivity"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
