@@ -19,8 +19,10 @@ import androidx.core.content.FileProvider
 import com.afollestad.assent.Permission
 import com.afollestad.assent.askForPermissions
 import com.lx.ohmyjuus.api.BasicClient
+import com.lx.ohmyjuus.api.JUUSClient
 import com.lx.ohmyjuus.databinding.ActivityMainBinding
 import com.lx.ohmyjuus.databinding.ActivityPhotoBinding
+import com.lx.ohmyjuus.response.CaptureUploadRes
 import com.lx.ohmyjuus.response.FileUploadResponse
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -229,8 +231,8 @@ class PhotoActivity: AppCompatActivity() {
         )
 
         val params = hashMapOf<String,String>()
-        params["userid"] = "102010"
-        params["username"] = "김준수"
+        params["userId"] = "ahs77"
+        params["username"] = "안호성"
 
         BasicClient.api.uploadFile(
             file=filePart,
@@ -238,6 +240,20 @@ class PhotoActivity: AppCompatActivity() {
         ).enqueue(object : Callback<FileUploadResponse> {
             override fun onResponse(call: Call<FileUploadResponse>, response: Response<FileUploadResponse>) {
                 println("onResponse called : ${response.body().toString()}")
+
+                JUUSClient.api.saveUpload(
+                    userId= "ahs77",
+                    filename=outputFilename
+                ).enqueue(object : Callback<CaptureUploadRes> {
+                    override fun onResponse(call: Call<CaptureUploadRes>, response: Response<CaptureUploadRes>) {
+                        TODO("Not yet implemented")
+
+                    }
+
+                    override fun onFailure(call: Call<CaptureUploadRes>, t: Throwable) {
+                        println("onFailure called : ${t.message}")
+                    }
+                })
 
             }
 

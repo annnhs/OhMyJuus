@@ -4,6 +4,7 @@ import com.lx.ohmyjuus.response.*
 import com.lx.ohmyjuus.response.LoginRes
 import com.lx.ohmyjuus.response.RegisterRes
 import okhttp3.Interceptor
+import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -15,7 +16,7 @@ import java.util.concurrent.TimeUnit
 interface JUUSApi {
 
     @FormUrlEncoded
-    @POST("/users/register")
+    @POST("/juus/register")
     fun userRegister(
         @Field("userId") userId:String? = null,
         @Field("userPw") userPw:String? = null,
@@ -25,11 +26,17 @@ interface JUUSApi {
         @Field("userBirth") userBirth:String? = null
     ): Call<RegisterRes>
 
-    @GET("/users/login")
+    @GET("/juus/login")
     fun userLogin(
         @Query("userId") userId:String? = null,
         @Query("userPw") userPw:String? = null
     ): Call<LoginRes>
+
+    @GET("/juus/save_upload")
+    fun saveUpload(
+        @Query("userId") userId:String? = null,
+        @Query("filename") filename:String? = null
+    ): Call<CaptureUploadRes>
 
 //    @GET("/smokearea/list")
 //    fun getSmokeArea(
