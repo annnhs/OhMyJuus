@@ -42,7 +42,7 @@ class BasicClient {
         }
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.30.35:8001/"
+        private const val BASE_URL = "http://14.55.65.169"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
