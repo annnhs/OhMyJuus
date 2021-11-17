@@ -16,6 +16,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="16sp"
+        app:layout_constraintVertical_bias="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,25 +43,8 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintWidth_percent="0.8" />
 
-    <ImageButton
-        android:id="@+id/goToSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:backgroundTint="@color/invisible"
-        android:minHeight="48dp"
-        android:src="@drawable/login_signup"
-        app:layout_constraintBottom_toTopOf="@id/logInButton"
-        app:layout_constraintEnd_toEndOf="@id/PW"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/PW"
-        app:layout_constraintVertical_bias="0"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <Button
-        android:id="@+id/logInButton"
+        android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"
@@ -71,7 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/goToSignup"
+        app:layout_constraintTop_toBottomOf="@id/PW"
         app:layout_constraintVertical_bias="0.7"
         app:layout_constraintWidth_percent="0.8" />
 

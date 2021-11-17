@@ -31,7 +31,6 @@ import kotlinx.android.synthetic.main.nav_header.view.*
 
 class MainActivity : AppCompatActivity() {
 
-    //공경화
     private var viewPager: ViewPager? = null
     lateinit var binding: ActivityMainBinding
     private var drawerLayout: DrawerLayout? = null
@@ -100,6 +99,16 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navRecord -> {
                     val intent = Intent(this, CalendarActivity::class.java)
+                    startActivity(intent)
+
+                }
+                R.id.navPoint -> {
+                    val intent = Intent(this, PointActivity::class.java)
+                    startActivity(intent)
+
+                }
+                R.id.navChallenge -> {
+                    val intent = Intent(this, ChallengeActivity::class.java)
                     startActivity(intent)
 
                 }

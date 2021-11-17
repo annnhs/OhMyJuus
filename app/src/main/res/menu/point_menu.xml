@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/pointView"
+        android:icon="@drawable/point_view_txt"
+        android:title="조회"
+        app:cnb_iconColor="@color/white" />
+
+    <item
+        android:id="@+id/pointUse"
+        android:icon="@drawable/point_use_txt"
+        android:title="사용처"
+        app:cnb_iconColor="@color/white" />
+
+</menu>

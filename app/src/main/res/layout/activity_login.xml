@@ -80,12 +80,13 @@
                     android:background="@color/main"
                     android:text="회원가입하기"
                     android:textColor="@color/white" />
-                <ImageButton
+                <Button
                     android:id="@+id/logInButton"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/main"
-                    app:srcCompat="@drawable/img_editprofile" />
+                    android:background="@color/main"
+                    android:text="로그인"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

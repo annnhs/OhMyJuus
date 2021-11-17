@@ -21,13 +21,13 @@ class LoginActivity : AppCompatActivity() {
 
     val TAG: String = "LoginActivity"
 
+
 //    // 쉐어드로부터 저장된 id, pw 가져오기
 //    val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         if(com.lx.ohmyjuus.SharedPreferences.getUserId(this).isNullOrBlank() || com.lx.ohmyjuus.SharedPreferences.getUserPass(this).isNullOrBlank()) {
             logInButton.setOnClickListener {
