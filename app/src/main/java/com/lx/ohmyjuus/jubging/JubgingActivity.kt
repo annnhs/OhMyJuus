@@ -81,7 +81,9 @@ class JubgingActivity : AppCompatActivity()
     private var curLatlng: LatLng? = null
     private val SEOUL = LatLng(37.56, 126.97)
     private var marker: Marker? = null
+    private var marker2: Marker? = null
     private var marker_juus: BitmapDescriptor? = null
+    private var marker_trash: BitmapDescriptor? = null
     private var polyline: Polyline? = null
 
 
@@ -320,9 +322,9 @@ class JubgingActivity : AppCompatActivity()
 //                    isTracking = true
 //
 
-                    binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_fixed_24)
+                binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_fixed_24)
 
-                    mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatlng!!, 18f))
+                mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatlng!!, 18f))
 //                    if (MyUtils.pointList.isNotEmpty())
 //                        mMap.setMapCenterPoint(MyUtils.pointList.last(), false)
 //
@@ -449,6 +451,7 @@ class JubgingActivity : AppCompatActivity()
         mMap = googleMap
         //googleMap.setOnInfoWindowClickListener(this)
         setDefaultLoc(this)
+
         var bitmap_juus = BitmapFactory.decodeResource(
             resources, resources.getIdentifier(
                 "juus_logo", "drawable",
@@ -457,6 +460,19 @@ class JubgingActivity : AppCompatActivity()
         )
         bitmap_juus = Bitmap.createScaledBitmap(bitmap_juus!!, 120, 120, false)
         marker_juus = BitmapDescriptorFactory.fromBitmap(bitmap_juus)
+
+        var bitmap_trash = BitmapFactory.decodeResource(
+            resources, resources.getIdentifier(
+                "trash", "drawable",
+                packageName
+            )
+        )
+        bitmap_trash = Bitmap.createScaledBitmap(bitmap_trash!!, 120, 120, false)
+        marker_trash = BitmapDescriptorFactory.fromBitmap(bitmap_trash)
+
+
+
+
         setCurMarker()
 
 
@@ -515,6 +531,17 @@ class JubgingActivity : AppCompatActivity()
         val goPhoto = Intent(applicationContext, PhotoActivity::class.java)
         startActivity(goPhoto)
 
+        if (marker2 != null) marker2!!.setPosition(curLatlng!!) else {
+            val markerOptions = MarkerOptions()
+
+            markerOptions.position(curLatlng!!)
+                .icon(marker_trash)
+
+            marker2 = mMap!!.addMarker(markerOptions)
+            marker2!!.showInfoWindow()
+        }
+
+
         return true
     }
 
@@ -556,5 +583,5 @@ class JubgingActivity : AppCompatActivity()
         }
         return strFilePath
     }
-    
+
 }

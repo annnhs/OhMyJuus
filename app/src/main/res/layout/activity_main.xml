@@ -74,8 +74,9 @@
                     <androidx.viewpager.widget.ViewPager
                         android:id="@+id/view_pager"
                         android:layout_width="300dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="35dp"
+                        android:layout_height="125dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="10dp"
                         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 </androidx.cardview.widget.CardView>
