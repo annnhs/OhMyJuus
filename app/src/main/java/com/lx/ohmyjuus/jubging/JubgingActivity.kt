@@ -493,7 +493,7 @@ class JubgingActivity : AppCompatActivity()
         curLatlng = if (loc != null) LatLng(loc.latitude, loc.longitude) else SEOUL
     }
 
-    //?????
+    //고침
     //위치 바뀔 때
     override fun onLocationChanged(location: Location) {
         curLatlng = LatLng(location.latitude, location.longitude)
