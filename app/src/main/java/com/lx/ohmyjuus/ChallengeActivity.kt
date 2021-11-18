@@ -34,6 +34,11 @@ class ChallengeActivity : AppCompatActivity() {
 
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId) {
+                R.id.navMain -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                }
                 R.id.navMap -> {
                     val intent = Intent(this, MapActivity::class.java)
                     startActivity(intent)
