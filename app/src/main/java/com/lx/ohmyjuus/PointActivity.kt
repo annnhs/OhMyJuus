@@ -18,6 +18,8 @@ class PointActivity : AppCompatActivity() {
 
         setUpTabBar()
 
+
+
     }
 
     private fun setUpTabBar() {

@@ -10,18 +10,10 @@
         android:id="@+id/datePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/datePicker"
-        android:text="날짜표시"
-        android:textSize="30sp" />
+        android:layout_marginTop="10dp"
+        android:headerBackground="#4C9FC4" />
 
 
 </RelativeLayout>
