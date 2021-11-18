@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 
 import android.content.Intent
 import android.os.Parcelable
+import com.lx.ohmyjuus.MainActivity
 
 
 class JubFinishActivity: AppCompatActivity() {
@@ -31,6 +32,10 @@ class JubFinishActivity: AppCompatActivity() {
         binding.jubCount.text = intent.getStringExtra("jubCount")
 
 
+        binding.goHomeButton.setOnClickListener {
+            val goHome= Intent(this, MainActivity::class.java)
+            startActivity(goHome)
+        }
 
         val intent = intent
 

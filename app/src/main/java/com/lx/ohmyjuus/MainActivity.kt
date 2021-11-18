@@ -124,9 +124,9 @@ class MainActivity : AppCompatActivity() {
             .permissions(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
             .request { allGranted, grantedList, deniedList ->
                 if (allGranted) {
-                    Toast.makeText(this, "모든 권한이 부여됨", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this, "모든 권한이 부여됨", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "권한 중에 거부된 권한들: $deniedList", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this, "권한 중에 거부된 권한들: $deniedList", Toast.LENGTH_LONG).show()
                 }
             }
 

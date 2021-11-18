@@ -51,9 +51,9 @@
             android:text="count" />
 
         <Button
-            android:id="@+id/takeButton"
+            android:id="@+id/goHomeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="가져오기" />
+            android:text="저장" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
