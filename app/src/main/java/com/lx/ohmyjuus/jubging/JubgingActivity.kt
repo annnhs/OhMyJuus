@@ -31,8 +31,10 @@ import com.lx.ohmyjuus.MainActivity
 import com.lx.ohmyjuus.R
 import com.lx.ohmyjuus.databinding.ActivityJubgingBinding
 import com.lx.ohmyjuus.jubging.MyUtils.Companion.activity
+import kotlinx.android.synthetic.main.activity_calendar.*
 import java.io.*
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.*
 
 
@@ -85,6 +87,7 @@ class JubgingActivity : AppCompatActivity()
     private var marker_juus: BitmapDescriptor? = null
     private var marker_trash: BitmapDescriptor? = null
     private var polyline: Polyline? = null
+    private var jubCount: Int? = 0
 
 
     protected fun createLocationRequest() {
@@ -135,6 +138,8 @@ class JubgingActivity : AppCompatActivity()
 
 
 
+        val countIntent = Intent(applicationContext, JubFinishActivity::class.java)
+        countIntent.putExtra("jubCount", jubCount)
 
 
 
@@ -279,7 +284,7 @@ class JubgingActivity : AppCompatActivity()
                         binding.btnStart.text = "줍깅 종료"
                         MyUtils.startJubging()
 
-
+1
 
                     }
                 } else {
@@ -291,11 +296,14 @@ class JubgingActivity : AppCompatActivity()
 
                             mService?.removeLocationUpdates()
 
-
-                            val intent = Intent().apply {
-                                putExtra("jubgingInfo", jubgingInfo)
-                                putExtra("isJubgingOn", true)
-                            }
+                            val recordIntent = Intent(this@JubgingActivity, JubFinishActivity::class.java)
+                            recordIntent.putExtra("time", MyUtils.time )
+                            recordIntent.putExtra("distance", String.format("%.2f", MyUtils.totalDist) )
+                            startActivity(recordIntent)
+//                            val intent = Intent().apply {
+//                                putExtra("jubgingInfo", jubgingInfo)
+//                                putExtra("isJubgingOn", true)
+//                            }
                             activity!!.setResult(RESULT_OK, intent)
                             activity!!.finish()
                         }
@@ -532,7 +540,7 @@ class JubgingActivity : AppCompatActivity()
         val goPhoto = Intent(applicationContext, PhotoActivity::class.java)
         startActivity(goPhoto)
 
-        if (marker2 != null) marker2!!.setPosition(curLatlng!!) else {
+//        if (marker2 != null) marker2!!.setPosition(curLatlng!!) else {
             val markerOptions = MarkerOptions()
 
             markerOptions.position(curLatlng!!)
@@ -540,7 +548,9 @@ class JubgingActivity : AppCompatActivity()
 
             marker2 = mMap!!.addMarker(markerOptions)
             marker2!!.showInfoWindow()
-        }
+//        }
+
+        jubCount = jubCount?.plus(1)
 
 
         return true
@@ -558,11 +568,14 @@ class JubgingActivity : AppCompatActivity()
         mMap?.snapshot(callback)
 
 
-        val goHome = Intent(applicationContext, MainActivity::class.java)
-        startActivity(goHome)
+//        val capIntent = Intent(applicationContext, JubFinishActivity::class.java)
+//        capIntent.putExtra("snapshot", textView)
 
-        if (latLngList.size > 0) latLngList.clear()
-        if (polyline != null) polyline!!.remove()
+//        val goHome = Intent(applicationContext, MainActivity::class.java)
+//        startActivity(goHome)
+
+//        if (latLngList.size > 0) latLngList.clear()
+//        if (polyline != null) polyline!!.remove()
     }
 
 
@@ -582,6 +595,14 @@ class JubgingActivity : AppCompatActivity()
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         }
+
+
+
+//        val imageIntent = Intent(this@JubgingActivity, JubFinishActivity::class.java)
+//        imageIntent.putExtra("snapshot", captureBitmap )
+//
+//        startActivity(imageIntent)
+
         return strFilePath
     }
 

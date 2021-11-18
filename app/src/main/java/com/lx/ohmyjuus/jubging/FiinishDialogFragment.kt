@@ -26,7 +26,8 @@ class FiinishDialogFragment(private val listener: OnClickDialogListener): Dialog
 
                     MyUtils.capture()
 
-                    val intent = Intent(activity, MainActivity::class.java)
+
+                    val intent = Intent(activity, JubFinishActivity::class.java)
                     startActivity(intent)
 
 

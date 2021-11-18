@@ -82,6 +82,9 @@
             android:name=".jubging.JubgingActivity"
             android:exported="true" />
         <activity
+            android:name=".jubging.JubFinishActivity"
+            android:exported="true"/>
+        <activity
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity
