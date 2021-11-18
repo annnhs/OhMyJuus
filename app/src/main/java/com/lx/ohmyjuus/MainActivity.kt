@@ -54,7 +54,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, JubgingActivity::class.java)
             startActivity(intent)
         }
-
+        binding.moreChallengeButton.setOnClickListener {
+            val intent = Intent(this, ChallengeActivity::class.java)
+            startActivity(intent)
+        }
 
         /////////////////////// login /////////////////////////
 
@@ -76,6 +79,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+
+
 
         /////////////////////// login end /////////////////////////
 
