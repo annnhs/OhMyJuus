@@ -25,7 +25,7 @@
         <item
             android:id="@+id/navMap"
             android:icon="@drawable/img_map"
-            android:title="지도" />
+            android:title="내주변" />
         <item
             android:id="@+id/navRecord"
             android:icon="@drawable/img_map"

@@ -3,14 +3,15 @@ package com.lx.ohmyjuus
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
@@ -116,6 +117,8 @@ class MainActivity : AppCompatActivity() {
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
+
+
         }
 
 
@@ -168,6 +171,60 @@ class MainActivity : AppCompatActivity() {
                         .show()
                 }
             }).check()
+
+
+
+        //줍깅 캠페인(이정환)
+        binding.goSite1.setOnClickListener {
+            val goSite = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://www.vision21.kr/mobile/article.html?no=157142")
+            )
+            startActivity(goSite)
+        }
+        binding.goSite2.setOnClickListener {
+            val goSite2 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://familyseoul.or.kr/node/12669")
+            )
+            startActivity(goSite2)
+        }
+        binding.goSite3.setOnClickListener {
+            val goSite3 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://sisatotalnews.com/article.php?aid=1636367633140948003")
+            )
+            startActivity(goSite3)
+        }
+        binding.goSite4.setOnClickListener {
+            val goSite4 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://www.nwtnews.co.kr/news/articleView.html?idxno=85316")
+            )
+            startActivity(goSite4)
+        }
+        binding.goSite5.setOnClickListener {
+            val goSite5 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.gwnews.org/news/articleView.html?idxno=223403")
+            )
+            startActivity(goSite5)
+        }
+        binding.goSite6.setOnClickListener {
+            val goSite6 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://www.tynewspaper.co.kr/news/articleView.html?idxno=21320")
+            )
+            startActivity(goSite6)
+        }
+        binding.goSite7.setOnClickListener {
+            val goSite7 = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://jnnews.co.kr/news/view.php?idx=313942")
+            )
+            startActivity(goSite7)
+        }
+
 
 
     }

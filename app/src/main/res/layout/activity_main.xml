@@ -583,71 +583,217 @@
 
                                 <!--                                이 카드뷰를 복붙으로 Linear Layout 안에 넣으면 캠페인 추가 가능-->
                                 <androidx.cardview.widget.CardView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:padding="10dp"
-                                    app:cardCornerRadius="8dp"
-                                    app:cardElevation="5dp"
-                                    app:cardUseCompatPadding="true">
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:layout_width="100dp"
-                                            android:layout_height="100dp"
-                                            android:layout_gravity="center"
-                                            android:layout_weight="1"
-                                            android:background="@color/white"
-                                            android:padding="10dp"
-                                            android:src="@drawable/edit_text_bg" />
+                                            android:id="@+id/goSite1"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign1" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_gravity="center_horizontal"
-                                            android:layout_weight="1"
-                                            android:fontFamily="sans-serif-black"
-                                            android:text="캠페인 이름"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="하남시 [다함께 플로깅]"
                                             android:textSize="10dp" />
 
                                     </LinearLayout>
 
                                 </androidx.cardview.widget.CardView>
-                                <!--                                주석 내부 cardview 태그 복사 -> 붙여넣기-->
 
                                 <androidx.cardview.widget.CardView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:padding="10dp"
-                                    app:cardCornerRadius="8dp"
-                                    app:cardElevation="5dp"
-                                    app:cardUseCompatPadding="true">
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:layout_width="100dp"
-                                            android:layout_height="100dp"
-                                            android:layout_gravity="center"
-                                            android:layout_weight="1"
-                                            android:background="@color/white"
-                                            android:padding="10dp"
-                                            android:src="@drawable/edit_text_bg" />
+                                            android:id="@+id/goSite2"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign2" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_gravity="center_horizontal"
-                                            android:layout_weight="1"
-                                            android:fontFamily="sans-serif-black"
-                                            android:text="캠페인 이름"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="서울 동작구 [우리함께 줍깅]"
                                             android:textSize="10dp" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/goSite3"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign3" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="전남 [줍깅 캠페인]"
+                                            android:textSize="10dp" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/goSite4"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign4" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="서울 중랑구 [초록 발걸음]"
+                                            android:textSize="10dp"/>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/goSite5"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign5" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="강원 [나라사랑 줍깅]"
+                                            android:textSize="10dp" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/goSite6"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign6" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="경남 [통영 줍깅 캠페인]"
+                                            android:textSize="10dp" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/goSite7"
+                                            android:layout_width="150dp"
+                                            android:layout_height="110dp"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/campaign7" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal|center_vertical"
+                                            android:layout_marginTop="3dp"
+                                            android:text="광주 [동구 충장축제 줍깅]"
+                                            android:textSize="10dp"/>
 
                                     </LinearLayout>
 
