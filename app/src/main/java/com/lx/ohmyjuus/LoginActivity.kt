@@ -58,12 +58,12 @@ class LoginActivity : AppCompatActivity() {
                 call: Call<LoginRes>,
                 response: Response<LoginRes>
             ) {
-                println("login onResponse 호출됨")
+                println("onResponse called : ${response.body()?.output.toString()}")
 
                 var userData = response.body()?.output
-                userData.apply {
-                    //여기서 디비의 아이디 비번이랑 비교해야 되는데
-                }
+//                userData.apply {
+//                    //여기서 디비의 아이디 비번이랑 비교해야 되는데
+//                }
             }
             override fun onFailure(call: Call<LoginRes>, t: Throwable) {
                 println("login onFailure 호출됨")
