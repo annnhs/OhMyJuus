@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.navMap -> {
-                    val intent = Intent(this, JubgingActivity::class.java)
+                    val intent = Intent(this, MapActivity::class.java)
                     startActivity(intent)
 
                 }
