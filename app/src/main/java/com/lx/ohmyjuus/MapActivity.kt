@@ -34,6 +34,7 @@ class MapActivity : AppCompatActivity() {
     var mymarker: MarkerOptions? = null
     var mymarkerObj: Marker? = null
     private var marker_juus: BitmapDescriptor? = null
+    private var marker_trash: BitmapDescriptor? = null
 
 
     //위치 클라이언트 선언 -> fun requestLocation()
@@ -54,7 +55,7 @@ class MapActivity : AppCompatActivity() {
 
             requestLocation()
 
-            showTrashPoint("일반쓰레기통")
+
 
 
         }
@@ -112,7 +113,7 @@ class MapActivity : AppCompatActivity() {
 
         getAreaList(location)
 
-
+        showTrashPoint("일반쓰레기통")
 
     }
 
@@ -146,7 +147,17 @@ class MapActivity : AppCompatActivity() {
 
         ).enqueue(object: Callback<MapRes> {
             override fun onResponse(call: Call<MapRes>, response: Response<MapRes>) {
-                println("onResponse 호출됨")
+                println("showTrashPoint onResponse 호출됨")
+
+                var bitmap_trash = BitmapFactory.decodeResource(
+                    resources, resources.getIdentifier(
+                        "ic_trashcan", "drawable",
+                        packageName
+                    )
+                )
+                bitmap_trash = Bitmap.createScaledBitmap(bitmap_trash!!, 120, 120, false)
+                marker_trash = BitmapDescriptorFactory.fromBitmap(bitmap_trash)
+
 
                 var items = response.body()?.data
                 items?.apply {
@@ -154,7 +165,7 @@ class MapActivity : AppCompatActivity() {
                         val trashPointMarker = MarkerOptions()
                         with(trashPointMarker) {
                             position(LatLng(item.latitude!!, item.longitude!!))
-                            icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_trashcan))
+                            icon(marker_trash)
                             map.addMarker(this)
                         }
                     }

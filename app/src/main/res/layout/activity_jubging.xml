@@ -130,7 +130,7 @@
         android:layout_margin="30dp"
         android:layout_toEndOf="@id/map_view"
         android:text="줍깅 시작"
-        android:textColor="#00bfa5"
+        android:textColor="#4C9FC4"
         android:textSize="18sp"
         android:textStyle="bold"
         android:background="@drawable/btn_radius_click"

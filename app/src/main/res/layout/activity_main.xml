@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
                         android:paddingLeft="30dp"
-                        android:text="(사용자의 걸은 km)"
+                        android:text="12.18 Km"
                         android:textColor="@color/main"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -122,7 +122,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text=" '몇 명' "
+                            android:text=" 1 명 "
                             android:textColor="@color/white" />
 
                         <TextView
@@ -217,6 +217,7 @@
                                                     android:id="@+id/mainRecord1"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
+                                                    android:background="@drawable/jub1"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
@@ -252,6 +253,7 @@
                                                     android:id="@+id/mainRecord2"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
+                                                    android:background="@drawable/jub2"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
@@ -286,6 +288,7 @@
                                                     android:id="@+id/mainRecord3"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
+                                                    android:background="@drawable/jub3"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
@@ -320,6 +323,7 @@
                                                     android:id="@+id/mainRecord4"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
+                                                    android:background="@drawable/jub1"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
