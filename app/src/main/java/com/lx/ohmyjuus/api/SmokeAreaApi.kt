@@ -1,10 +1,11 @@
-package com.lx.ohmyjuus.api
+package com.lx.map.api
 
-import com.lx.ohmyjuus.response.*
-import com.lx.ohmyjuus.response.LoginRes
-import com.lx.ohmyjuus.response.RegisterRes
+//import com.lx.drawer.response.PointResponse
+//import com.lx.drawer.response.PointUpdateResponse
+//import com.lx.drawer.response.SmokeAreaResponse
+//import com.lx.drawer.response.reportResponse
+import com.lx.ohmyjuus.response.SmokeAreaResponse
 import okhttp3.Interceptor
-import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -13,36 +14,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
-interface JUUSApi {
+interface SmokeAreaApi {
 
-    @FormUrlEncoded
-    @POST("/juus/register")
-    fun userRegister(
-        @Field("userId") userId:String? = null,
-        @Field("userPw") userPw:String? = null,
-        @Field("userName") userName:String? = null,
-        @Field("userMobile") userMobile:String? = null,
-        @Field("userNick") userNick:String? = null,
-        @Field("userBirth") userBirth:String? = null
-    ): Call<RegisterRes>
+    @GET("/trash/list")
+    fun getSmokeArea(
+        @Query("point1") point1:String? = null,
+        @Query("point2") point2:String? = null,
+    ): Call<SmokeAreaResponse>
 
-    @GET("/juus/login")
-    fun userLogin(
-        @Query("userId") userId:String? = null,
-        @Query("userPw") userPw:String? = null
-    ): Call<LoginRes>
-
-    @GET("/juus/save_upload")
-    fun saveUpload(
-        @Query("userId") userId:String? = null,
-        @Query("filename") filename:String? = null
-    ): Call<CaptureUploadRes>
-
-    @GET("/juus/trash-list")
-    fun getTrashPoint(
-        @Query("type") type:String? = null
-    ): Call<MapRes>
-//
 //    @GET("/smokearea/getpoint")
 //    fun getPoint(
 //        @Query("userid") userid:String? = null
@@ -87,36 +66,36 @@ interface JUUSApi {
 */
 }
 
-class JUUSClient {
+class SmokeAreaClient {
 
     // 붕어빵 틀에 진짜 변수상자나 함수 상자를 붙여두는 것 (CustomerClient.count 로 접근가능)
     companion object {
 
-        private var instance: JUUSApi? = null
+        private var instance:SmokeAreaApi? = null
 
-        val api: JUUSApi
+        val api:SmokeAreaApi
             get() {
                 return getInstance()
             }
 
         @Synchronized
-        fun getInstance(): JUUSApi {
+        fun getInstance():SmokeAreaApi {
             if (instance == null) {
                 instance = create()
             }
 
-            return instance as JUUSApi // 형변환
+            return instance as SmokeAreaApi // 형변환
         }
 
         // 기본 URL
-        private const val BASE_URL = "http://14.55.65.169"
+        private const val BASE_URL = "http://172.30.1.15:8001"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
         private const val CLIENT_SECRET = ""
         var userId:String = ""
 
-        fun create(): JUUSApi {
+        fun create(): SmokeAreaApi {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -141,7 +120,7 @@ class JUUSClient {
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(JUUSApi::class.java)
+                .create(SmokeAreaApi::class.java)
 
         }
 

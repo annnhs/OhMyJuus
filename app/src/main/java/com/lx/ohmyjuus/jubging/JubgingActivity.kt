@@ -144,9 +144,10 @@ class JubgingActivity : AppCompatActivity()
 
 
 
-
-
     }
+
+
+
 
     fun updateTime(time: String) {
         binding.time.text = time
