@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
     val TAG: String = "LoginActivity"
 
 
-//    // 쉐어드로부터 저장된 id, pw 가져오기
+//    쉐어드로부터 저장된 id, pw 가져오기
 //    val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
