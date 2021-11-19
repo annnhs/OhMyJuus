@@ -50,22 +50,14 @@ class MainActivity : AppCompatActivity() {
 
         //setSupportActionBar(binding.toolbar)
 
-        val toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            binding.toolbar,
-            R.string.drawer_open,
-            R.string.drawer_close
-        )
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-
         binding.goJubgingBtn.setOnClickListener {
             val intent = Intent(this, JubgingActivity::class.java)
             startActivity(intent)
         }
-
+        binding.moreChallengeButton.setOnClickListener {
+            val intent = Intent(this, ChallengeActivity::class.java)
+            startActivity(intent)
+        }
 
         /////////////////////// login /////////////////////////
 
@@ -88,11 +80,30 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
+
         /////////////////////// login end /////////////////////////
+
+
+        val toggle = ActionBarDrawerToggle(
+            this,
+            binding.drawerLayout,
+            binding.toolbar,
+            R.string.drawer_open,
+            R.string.drawer_close
+        )
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
 
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId) {
+                R.id.navMain -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                }
                 R.id.navMap -> {
                     val intent = Intent(this, MapActivity::class.java)
                     startActivity(intent)

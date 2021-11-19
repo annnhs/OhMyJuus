@@ -18,14 +18,14 @@
             android:id="@+id/navChallenge"
             android:icon="@drawable/img_map"
             android:title="챌린지" />
-        <item
-            android:id="@+id/navCommunity"
-            android:icon="@drawable/img_map"
-            android:title="커뮤니티" />
+<!--        <item-->
+<!--            android:id="@+id/navCommunity"-->
+<!--            android:icon="@drawable/img_map"-->
+<!--            android:title="커뮤니티" />-->
         <item
             android:id="@+id/navMap"
             android:icon="@drawable/img_map"
-            android:title="내주변" />
+            android:title="내 주변" />
         <item
             android:id="@+id/navRecord"
             android:icon="@drawable/img_map"
