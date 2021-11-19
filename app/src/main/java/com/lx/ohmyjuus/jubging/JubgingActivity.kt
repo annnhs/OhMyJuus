@@ -461,23 +461,6 @@ class JubgingActivity : AppCompatActivity()
         //googleMap.setOnInfoWindowClickListener(this)
         setDefaultLoc(this)
 
-        var bitmap_juus = BitmapFactory.decodeResource(
-            resources, resources.getIdentifier(
-                "juus_logo", "drawable",
-                packageName
-            )
-        )
-        bitmap_juus = Bitmap.createScaledBitmap(bitmap_juus!!, 120, 120, false)
-        marker_juus = BitmapDescriptorFactory.fromBitmap(bitmap_juus)
-
-        var bitmap_trash = BitmapFactory.decodeResource(
-            resources, resources.getIdentifier(
-                "trash", "drawable",
-                packageName
-            )
-        )
-        bitmap_trash = Bitmap.createScaledBitmap(bitmap_trash!!, 120, 120, false)
-        marker_trash = BitmapDescriptorFactory.fromBitmap(bitmap_trash)
 
 
 
@@ -520,7 +503,7 @@ class JubgingActivity : AppCompatActivity()
         if (marker != null) marker!!.setPosition(curLatlng!!) else {
             val markerOptions = MarkerOptions()
             markerOptions.position(curLatlng!!)
-                .icon(marker_juus)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location))
             mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatlng!!, 18f))
             marker = mMap!!.addMarker(markerOptions)
             marker!!.showInfoWindow()
@@ -545,7 +528,7 @@ class JubgingActivity : AppCompatActivity()
             val markerOptions = MarkerOptions()
 
             markerOptions.position(curLatlng!!)
-                .icon(marker_trash)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location))
 
             marker2 = mMap!!.addMarker(markerOptions)
             marker2!!.showInfoWindow()

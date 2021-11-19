@@ -33,7 +33,7 @@ class JubFinishActivity: AppCompatActivity() {
 
 
         binding.goHomeButton.setOnClickListener {
-            val goHome= Intent(this, MainActivity::class.java)
+            val goHome= Intent(this, JubgingActivity::class.java)
             startActivity(goHome)
         }
 

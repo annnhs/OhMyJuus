@@ -27,7 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="95dp"
         android:layout_marginTop="20dp"
-        android:text="김어스"
+        android:text="anhs"
         android:textColor="@color/black"
         android:textSize="24sp" />
 
@@ -39,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="95dp"
         android:layout_marginTop="55dp"
-        android:text="songdonggul"
+        android:text="ahs77"
         android:textColor="@android:color/darker_gray" />
 
     <Button
