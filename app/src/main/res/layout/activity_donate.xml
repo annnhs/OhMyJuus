@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="(사용자 닉네임)" />
+                    android:text="호성" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:paddingBottom="30dp"
-                android:text="(사용자의 포인트)"
+                android:text="14500 P"
                 android:textColor="@color/main"
                 android:textSize="20dp"
                 android:textStyle="bold" />
