@@ -1,15 +1,11 @@
 package com.lx.ohmyjuus
 
-import android.Manifest
-import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
-import android.view.View
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -201,7 +197,7 @@ class MapActivity : AppCompatActivity() {
                         with(smokeAreaMarker) {
                             position(LatLng(item.latitude!!, item.longitude!!))
                             title(item.smokingName)
-                            icon(BitmapDescriptorFactory.fromResource(R.drawable.juus_logo))
+                            icon(BitmapDescriptorFactory.fromResource(R.drawable.logo_juus))
                             map.addMarker(this)
                         }
                     }
