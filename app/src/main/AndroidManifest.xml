@@ -46,6 +46,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OhMyJuus">
         <activity
+            android:name=".DonateActivity"
+            android:exported="true" />
+        <activity
             android:name=".PointActivity"
             android:exported="true" />
         <activity
@@ -72,9 +75,7 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
@@ -83,7 +84,7 @@
             android:exported="true" />
         <activity
             android:name=".jubging.JubFinishActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".CalendarActivity"
             android:exported="true" />
