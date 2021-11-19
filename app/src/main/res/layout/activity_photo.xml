@@ -36,6 +36,10 @@
             android:id="@+id/takePictureButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn_radius_click"
+            android:textColor="#00bfa5"
+            android:textStyle="bold"
+            android:textSize="18sp"
             android:text="사진찍기" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
