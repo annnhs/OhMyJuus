@@ -36,24 +36,40 @@
             android:id="@+id/timeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="time" />
+            android:text="시간"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
 
         <TextView
             android:id="@+id/distanceTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="distance" />
+            android:text="KM"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+
+            />
 
         <TextView
             android:id="@+id/jubCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="count" />
+            android:text="주운 횟수"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
 
         <Button
             android:id="@+id/goHomeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="저장" />
+            android:background="@drawable/btn_radius_click"
+            android:text="저장"
+            android:textColor="#00bfa5"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,16 +2,19 @@ package com.lx.ohmyjuus;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 public class CalendarActivity extends AppCompatActivity {
 
     private DatePicker datePicker;
     private TextView textView;
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -23,6 +26,8 @@ public class CalendarActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.datePicker);
        // textView = findViewById(R.id.textView);
 
+        
+
         datePicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -30,11 +35,11 @@ public class CalendarActivity extends AppCompatActivity {
                 //textView.setText(year + "년" + monthOfYear  + "월" + dayOfMonth + "일");
 
 
-
-
-
             }
         });
+
+
+
 
     }
 }

@@ -398,15 +398,24 @@
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic_badge02" />
 
-                                    <ProgressBar
-                                        android:id="@+id/mainProgress1"
-                                        style="?android:attr/progressBarStyleHorizontal"
+
+                                    <TextView
+                                        android:id="@+id/mainChallTextView1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:elevation="5dp"
-                                        android:progress="70"
-                                        android:progressDrawable="@drawable/custom_progressbar" />
+                                        android:text="리사이클 마스터"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"/>
+<!--                                    <ProgressBar-->
+<!--                                        android:id="@+id/mainProgress1"-->
+<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:elevation="5dp"-->
+<!--                                        android:progress="70"-->
+<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
 
                                 </LinearLayout>
 
@@ -426,45 +435,53 @@
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic_badge05" />
 
-                                    <ProgressBar
-                                        android:id="@+id/mainProgress2"
-                                        style="?android:attr/progressBarStyleHorizontal"
+                                    <TextView
+                                        android:id="@+id/mainChallTextView2"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:elevation="5dp"
-                                        android:progress="60"
-                                        android:progressDrawable="@drawable/custom_progressbar" />
+                                        android:text="이번달 주어스왕"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"/>
+<!--                                    <ProgressBar-->
+<!--                                        android:id="@+id/mainProgress2"-->
+<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_gravity="center"-->
+<!--                                        android:elevation="5dp"-->
+<!--                                        android:progress="60"-->
+<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
 
                                 </LinearLayout>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:orientation="vertical"
-                                    android:paddingLeft="20dp">
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:gravity="center_vertical"-->
+<!--                                    android:orientation="vertical"-->
+<!--                                    android:paddingLeft="20dp">-->
 
-                                    <ImageButton
-                                        android:id="@+id/mainChallenge3"
-                                        android:layout_width="80dp"
-                                        android:layout_height="80dp"
-                                        android:background="@color/main"
-                                        android:padding="15dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/ic_badge07" />
+<!--                                    <ImageButton-->
+<!--                                        android:id="@+id/mainChallenge3"-->
+<!--                                        android:layout_width="80dp"-->
+<!--                                        android:layout_height="80dp"-->
+<!--                                        android:background="@color/main"-->
+<!--                                        android:padding="15dp"-->
+<!--                                        android:scaleType="fitXY"-->
+<!--                                        android:src="@drawable/ic_badge07" />-->
 
-                                    <ProgressBar
-                                        android:id="@+id/mainProgress3"
-                                        style="?android:attr/progressBarStyleHorizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:elevation="5dp"
-                                        android:progress="40"
-                                        android:progressDrawable="@drawable/custom_progressbar" />
+<!--                                    <ProgressBar-->
+<!--                                        android:id="@+id/mainProgress3"-->
+<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_gravity="center_vertical"-->
+<!--                                        android:elevation="5dp"-->
+<!--                                        android:progress="40"-->
+<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
 
-                                </LinearLayout>
+<!--                                </LinearLayout>-->
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -478,19 +495,31 @@
                                         android:layout_width="80dp"
                                         android:layout_height="80dp"
                                         android:background="@color/main"
-                                        android:padding="15dp"
+                                        android:padding="11dp"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic_badge09" />
 
-                                    <ProgressBar
-                                        android:id="@+id/mainProgress4"
-                                        style="?android:attr/progressBarStyleHorizontal"
+                                    <TextView
+                                        android:id="@+id/mainChallTextView4"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:elevation="5dp"
-                                        android:progress="20"
-                                        android:progressDrawable="@drawable/custom_progressbar" />
+                                        android:layout_gravity="center|center_horizontal|center_vertical"
+                                        android:paddingLeft="8dp"
+                                        android:text="기부 5회 달성"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+
+
+                                    <!--                                    <ProgressBar-->
+<!--                                        android:id="@+id/mainProgress4"-->
+<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_gravity="center_vertical"-->
+<!--                                        android:elevation="5dp"-->
+<!--                                        android:progress="20"-->
+<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
 
                                 </LinearLayout>
 
