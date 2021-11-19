@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/btn_radius_black.xml" value="0.1953125" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_editprofile.xml" value="0.11481481481481481" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_hamburger.xml" value="0.11481481481481481" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/img_map.xml" value="0.11481481481481481" />
@@ -12,15 +13,20 @@
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable-v24/store_coffee.xml" value="0.1953125" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_calendar.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_challenge.xml" value="0.22" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_donate.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_jubging.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_map.xml" value="0.14444444444444443" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_photo.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_point.xml" value="0.16458333333333333" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_shopdetail.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_signup.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_splash.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_update_mypage.xml" value="0.22" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/content_shopdetail.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_challenging_tab.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_first.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_login.xml" value="0.16458333333333333" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_map.xml" value="0.12777777777777777" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_point_view.xml" value="0.17916666666666667" />
@@ -33,16 +39,6 @@
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/bottom_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/nav_menu.xml" value="0.18775510204081633" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/menu/point_menu.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable-v24/border.xml" value="0.26564102564102565" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable-v24/btn_radius_black.xml" value="0.1787037037037037" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable-v24/cell.xml" value="0.1787037037037037" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable/btn_radius_click.xml" value="0.26564102564102565" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable/button_bg.xml" value="0.26564102564102565" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable/circle.xml" value="0.1787037037037037" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable/default_bg.xml" value="0.1787037037037037" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/drawable/ic_badge01.xml" value="0.1787037037037037" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/layout/activity_donate.xml" value="0.16" />
-        <entry key="..\:/Users/chldb/Projects/OhMyJuus/app/src/main/res/layout/activity_point.xml" value="0.264" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_point_look.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_point_use.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/tkvkf/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/ic_recycle.xml" value="0.38229166666666664" />

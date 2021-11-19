@@ -84,8 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:elevation="20dp"
-            android:src="@drawable/ic_back" />
+            android:elevation="20dp"/>
+<!--            android:src="@drawable/ic_back" />-->
 
         <ImageView
             android:layout_width="wrap_content"
@@ -114,8 +114,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:src="@drawable/logo_small_main" />
+                android:layout_margin="10dp"/>
+<!--                android:src="@drawable/logo_small_main" />-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,8 +133,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:src="@drawable/logo_small_main" />
+                android:layout_margin="10dp"/>
+<!--                android:src="@drawable/logo_small_main" />-->
 
             <TextView
                 android:layout_width="wrap_content"

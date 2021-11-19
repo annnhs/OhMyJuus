@@ -1,9 +1,7 @@
 package com.lx.ohmyjuus
 
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import com.lx.ohmyjuus.api.JUUSClient
 import com.lx.ohmyjuus.response.LoginRes
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.inputId
+import kotlinx.android.synthetic.main.activity_login.loginId
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,12 +27,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        if(com.lx.ohmyjuus.SharedPreferences.getUserId(this).isNullOrBlank() || com.lx.ohmyjuus.SharedPreferences.getUserPass(this).isNullOrBlank()) {
+        if(SharedPreferences.getUserId(this).isNullOrBlank() || SharedPreferences.getUserPass(this).isNullOrBlank()) {
             logInButton.setOnClickListener {
                 login()
             }
         } else {
-            Toast.makeText(this, "${com.lx.ohmyjuus.SharedPreferences.getUserId(this)}님 " +
+            Toast.makeText(this, "${SharedPreferences.getUserId(this)}님 " +
                     "자동로그인 되었습니다.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -58,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
                 call: Call<LoginRes>,
                 response: Response<LoginRes>
             ) {
-                println("onResponse called : ${response.body()?.output.toString()}")
+                println("userLogin onResponse called : ${response.body()?.output.toString()}")
 
                 var userData = response.body()?.output
 //                userData.apply {
@@ -72,58 +70,24 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login() {
-        if(inputId.text.isNullOrBlank() || inputPw.text.isNullOrBlank()) {
+        if(loginId.text.isNullOrBlank() || loginPassword.text.isNullOrBlank()) {
             Toast.makeText(this, "아이디와 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show()
         } else {
             //editText로부터 입력된 값을 받아온다
-            var userId = inputId.text.toString()
-            var userPw = inputPw.text.toString()
+            var userId = loginId.text.toString()
+            var userPw = loginPassword.text.toString()
 
             //쿼리문 실행해보고
             userLogin(userId, userPw)
 
             // 유저가 입력한 id, pw를 쉐어드에 저장한다.
-            com.lx.ohmyjuus.SharedPreferences.setUserId(this, userId)
-            com.lx.ohmyjuus.SharedPreferences.setUserPass(this, userPw)
+            SharedPreferences.setUserId(this, userId)
+            SharedPreferences.setUserPass(this, userPw)
 
-
-//            // 유저가 입력한 id, pw값과 쉐어드로 불러온 id, pw값 비교
-//            if(userId == savedId && userPw == savedPw){
-////                getUserLogin(id, pw)
-//
-            // 로그인 성공 다이얼로그 보여주기
-//                dialog("success")
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-//            }
-//            else{
-//                // 로그인 실패 다이얼로그 보여주기
-//                dialog("fail")
-//            }
         }
     }
 
-    // 로그인 성공/실패 시 다이얼로그를 띄워주는 메소드
-    fun dialog(type: String){
-        var dialog = AlertDialog.Builder(this)
-        if(type.equals("success")){
-            dialog.setTitle("로그인 성공")
-            dialog.setMessage("로그인 성공!")
-        }
-        else if(type.equals("fail")){
-            dialog.setTitle("로그인 실패")
-            dialog.setMessage("아이디와 비밀번호를 확인해주세요")
-        }
-        var dialog_listener = object: DialogInterface.OnClickListener{
-            override fun onClick(dialog: DialogInterface?, which: Int) {
-                when(which){
-                    DialogInterface.BUTTON_POSITIVE ->
-                        Log.d(TAG, "")
-                }
-            }
-        }
-        dialog.setPositiveButton("확인",dialog_listener)
-        dialog.show()
-    }
 
 }

@@ -64,7 +64,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/goLoginButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/invisible"
@@ -77,7 +77,7 @@
 
 
             <Button
-                android:id="@+id/goSignupButton"
+                android:id="@+id/signupButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/invisible"
@@ -102,7 +102,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/ID"
+                    android:id="@+id/inputId"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/signUpButtons"
@@ -132,7 +132,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/inputPW"
+                    android:id="@+id/inputPw"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/signUpButtons"
