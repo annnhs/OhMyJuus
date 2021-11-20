@@ -24,7 +24,7 @@ public class CalendarActivity extends AppCompatActivity {
 
 
         datePicker = findViewById(R.id.datePicker);
-       // textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textView2);
 
         
 
@@ -32,7 +32,8 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                  monthOfYear += 1;
-                //textView.setText(year + "년" + monthOfYear  + "월" + dayOfMonth + "일");
+                textView.setText(year + "년" + monthOfYear  + "월" + dayOfMonth + "일");
+
 
 
             }

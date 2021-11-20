@@ -528,7 +528,7 @@ class JubgingActivity : AppCompatActivity()
             val markerOptions = MarkerOptions()
 
             markerOptions.position(curLatlng!!)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.trashpin))
 
             marker2 = mMap!!.addMarker(markerOptions)
             marker2!!.showInfoWindow()
@@ -545,9 +545,7 @@ class JubgingActivity : AppCompatActivity()
 
     fun clickCapture() {
 
-        val callback =
-            SnapshotReadyCallback { bitmap ->
-                screenshot(bitmap)
+        val callback = SnapshotReadyCallback { bitmap -> screenshot(bitmap)
             }
         mMap?.snapshot(callback)
 
