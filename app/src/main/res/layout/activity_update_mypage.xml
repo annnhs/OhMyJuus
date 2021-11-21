@@ -73,7 +73,7 @@
                     android:layout_margin="20dp"
                     android:background="@drawable/round_corner_button"
                     android:padding="15dp"
-                    android:text="ID"
+                    android:text="ahs77 님"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
                 <TextView

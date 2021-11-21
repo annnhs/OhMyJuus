@@ -524,7 +524,7 @@ class JubgingActivity : AppCompatActivity()
             val markerOptions = MarkerOptions()
 
             markerOptions.position(curLatlng!!)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.trashpin))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.jubtrash))
 
             marker2 = mMap!!.addMarker(markerOptions)
             marker2!!.showInfoWindow()
