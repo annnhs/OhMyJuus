@@ -102,7 +102,7 @@ class JubgingActivity : AppCompatActivity()
         setContentView(binding.root)
 
         binding.time.typeface = Typeface.DEFAULT_BOLD
-        binding.distance.text = String.format("%.2f", MyUtils.totalDist)
+        //binding.distance.text = String.format("%.2f", MyUtils.totalDist)
         binding.distance.typeface = Typeface.DEFAULT_BOLD
         binding.btnStart.text = if (!MyUtils.startToggle) "줍깅 시작" else "줍깅 종료"
         MyUtils.activity = this
@@ -460,10 +460,6 @@ class JubgingActivity : AppCompatActivity()
         mMap = googleMap
         //googleMap.setOnInfoWindowClickListener(this)
         setDefaultLoc(this)
-
-
-
-
 
         setCurMarker()
 

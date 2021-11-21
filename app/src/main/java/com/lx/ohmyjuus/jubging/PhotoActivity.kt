@@ -4,23 +4,27 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.ContentUris
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.ImageDecoder
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.afollestad.assent.Permission
 import com.afollestad.assent.askForPermissions
 import com.lx.ohmyjuus.api.BasicClient
 import com.lx.ohmyjuus.api.JUUSClient
-import com.lx.ohmyjuus.databinding.ActivityMainBinding
 import com.lx.ohmyjuus.databinding.ActivityPhotoBinding
 import com.lx.ohmyjuus.response.CaptureUploadRes
 import com.lx.ohmyjuus.response.FileUploadResponse
@@ -32,6 +36,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import java.text.SimpleDateFormat
 
 class PhotoActivity: AppCompatActivity() {
     lateinit var binding: ActivityPhotoBinding
@@ -40,6 +45,11 @@ class PhotoActivity: AppCompatActivity() {
     lateinit var outputFile: File
 
     lateinit var takePictureLauncher:ActivityResultLauncher<Intent>
+
+    private val BUTTON1 = 100
+
+    // 원본 사진이 저장되는 Uri
+    private var photoUri: Uri? = null
 
 //    lateinit var pickAlbumLauncher:ActivityResultLauncher<Intent>
 
@@ -73,7 +83,25 @@ class PhotoActivity: AppCompatActivity() {
 
         // 사진찍기 버튼 클릭
         binding.takePictureButton.setOnClickListener {
-            takePicture()
+//            takePicture()
+
+            val values = ContentValues()
+            values.put(MediaStore.MediaColumns.DISPLAY_NAME, newJpgFileName())
+            values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+            values.put(MediaStore.MediaColumns.RELATIVE_PATH, "Pictures")
+
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            photoUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+            photoUri?.path?.let { it1 -> Log.d("PhotoURI", it1) }
+
+            takePictureIntent.resolveActivity(packageManager)?.also{
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+                startActivityForResult(takePictureIntent, BUTTON1)
+            }
+        }
+
+        binding.goBackButton.setOnClickListener {
+            finish()
         }
 //
 //        // 앨범에서선택 버튼 클릭
@@ -82,18 +110,40 @@ class PhotoActivity: AppCompatActivity() {
 //        }
 
     }
+    @RequiresApi(Build.VERSION_CODES.P)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK){
+            when(requestCode) {
+                BUTTON1 -> {
+                    val imageBitmap = photoUri?.let { ImageDecoder.createSource(this.contentResolver, it) }
+                    binding.selectedImageView.setImageBitmap(imageBitmap?.let { ImageDecoder.decodeBitmap(it) })
+                    //Toast.makeText(this, photoUri?.path, Toast.LENGTH_LONG).show()
+
+                }
+
+            }
+        }
+    }
+    private fun newJpgFileName() : String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd_HHmmss")
+        val filename = sdf.format(System.currentTimeMillis())
+        return "${filename}.jpg"
+    }
+
 
     fun takePicture() {
 
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { captureIntent ->
             outputFile = getPhotoFile()
 
+
             val providerFile = FileProvider.getUriForFile(this, "com.lx.ohmyjuus", outputFile)
             captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, providerFile)
 
             captureIntent.resolveActivity(packageManager)?.also {
                 takePictureLauncher.launch(captureIntent)
-            } ?:run {
+            } ?: run {
                 Log.e("Main", "Cannot open camera app.")
             }
         }
