@@ -1,5 +1,6 @@
 package com.lx.ohmyjuus
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -58,9 +59,9 @@ class LoginActivity : AppCompatActivity() {
             ) {
                 println("userLogin onResponse called : ${response.body()?.output.toString()}")
 
-                var userData = response.body()?.output
+//                var userData = response.body()?.output
 //                userData.apply {
-//                    //여기서 디비의 아이디 비번이랑 비교해야 되는데
+//
 //                }
             }
             override fun onFailure(call: Call<LoginRes>, t: Throwable) {
@@ -79,6 +80,12 @@ class LoginActivity : AppCompatActivity() {
 
             //쿼리문 실행해보고
             userLogin(userId, userPw)
+
+            val prefs : android.content.SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
+            val editor = prefs?.edit()
+            editor?.putString("userId", userId)
+            editor?.putString("userPw", userPw)
+            editor?.commit()
 
             // 유저가 입력한 id, pw를 쉐어드에 저장한다.
             SharedPreferences.setUserId(this, userId)

@@ -43,23 +43,16 @@ class SignupActivity : AppCompatActivity() {
                 // 회원가입 성공 토스트 메세지 띄우기
                 Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
 
-//                val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
-//                val editor = sharedPrefs.edit()
-                val prefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
-                val editor = prefs?.edit()
-                editor?.putString("userId", userId)
-                editor?.putString("userPw", userPw)
-                editor?.putString("userName", userName)
-                editor?.putString("userMobile", userMobile)
-                editor?.putString("userNick", userNick)
-                editor?.putString("userBirth", userBirth)
-                editor?.commit()
-
                 // 로그인 화면으로 이동
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
 
+        }
+
+        goLoginButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

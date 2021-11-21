@@ -44,7 +44,7 @@ class JubFinishActivity: AppCompatActivity() {
 
 
 
-            val goHome= Intent(this, JubgingActivity::class.java)
+            val goHome= Intent(this, MainActivity::class.java)
             startActivity(goHome)
 
         }
