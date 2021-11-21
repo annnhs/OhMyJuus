@@ -217,14 +217,14 @@
                                                     android:id="@+id/mainRecord1"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
-                                                    android:background="@drawable/jub1"
+                                                    android:background="@drawable/gara1"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center_horizontal"
-                                                    android:text="2021. 11. 10"
+                                                    android:text="2021. 11. 21"
                                                     android:textSize="10dp"
                                                     android:textStyle="bold" />
 
@@ -260,7 +260,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center_horizontal"
-                                                    android:text="2021. 11. 10"
+                                                    android:text="2021. 11. 14"
                                                     android:textSize="10dp"
                                                     android:textStyle="bold" />
                                             </LinearLayout>
@@ -288,7 +288,7 @@
                                                     android:id="@+id/mainRecord3"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
-                                                    android:background="@drawable/jub3"
+                                                    android:background="@drawable/gara2"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView
@@ -323,7 +323,7 @@
                                                     android:id="@+id/mainRecord4"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
-                                                    android:background="@drawable/jub1"
+                                                    android:background="@drawable/gara3"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView

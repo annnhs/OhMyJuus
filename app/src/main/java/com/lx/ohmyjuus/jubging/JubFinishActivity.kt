@@ -9,6 +9,7 @@ import com.lx.ohmyjuus.databinding.ActivityJubfinishBinding
 import android.graphics.Bitmap
 
 import android.content.Intent
+import android.graphics.ImageDecoder
 import android.location.Location
 import android.os.Parcelable
 import com.lx.ohmyjuus.jubging.MyUtils
@@ -40,6 +41,9 @@ class JubFinishActivity: AppCompatActivity() {
 //        binding.finishCount.text = intent.getStringExtra("jubCount")
 
 
+
+
+
         binding.goHomeButton.setOnClickListener {
 
 
@@ -53,7 +57,16 @@ class JubFinishActivity: AppCompatActivity() {
 
         val snapshot = intent.getParcelableExtra<Parcelable>("snapshot") as Bitmap?
 
-//        binding.captureImageView.setImageResource(snapshot)
+        //binding.captureImageView.setImageResource(takeSnapshot)
+    }
+
+
+    fun takeSnapShot() {
+        val snapshotIntent = intent
+
+        val takeSnapshot = snapshotIntent.extras!!.getInt("capture") //intent.getIntExtra("age") 라고해도됨
+
+
     }
 
 //    inner class MyReceiver : BroadcastReceiver() {

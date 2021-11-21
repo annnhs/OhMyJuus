@@ -570,6 +570,8 @@ class JubgingActivity : AppCompatActivity()
         try {
             fos = FileOutputStream(fileCacheItem)
             captureBitmap!!.compress(Bitmap.CompressFormat.PNG, 100, fos)
+
+
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         }
