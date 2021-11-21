@@ -100,14 +100,16 @@ class PhotoActivity: AppCompatActivity() {
             }
         }
 
-//        binding.goBackButton.setOnClickListener {
-//            finish()
-//        }
+        binding.backButton.setOnClickListener {
+            finish()
+        }
 //
 //        // 앨범에서선택 버튼 클릭
 //        binding.pickAlbumButton.setOnClickListener {
 //            pickAlbum()
 //        }
+
+
 
     }
     @RequiresApi(Build.VERSION_CODES.P)
