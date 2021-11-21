@@ -9,111 +9,96 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="20dp"
-            android:src="@drawable/ic_hambur" />
-
-
-
-
-    <LinearLayout
-        android:id="@+id/topLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/topLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical">
-
-<!--            <ImageButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@color/white"-->
-<!--                android:padding="30dp"-->
-<!--                android:src="@drawable/ic_hambur" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_hambur" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/pointId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="안호성 님" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="의 포인트" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/pointId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="안호성 님" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="의 포인트" />
-
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="30dp"
+                    android:text="14500 P"
+                    android:textColor="@color/main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:paddingBottom="30dp"
-                android:text="14500 P"
-                android:textColor="@color/main"
-                android:textSize="20dp"
-                android:textStyle="bold" />
         </LinearLayout>
 
-    </LinearLayout>
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/bottom_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/topLayout"
+            android:background="@color/main"
+            app:cnb_menuResource="@menu/point_menu" />
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
-        android:id="@+id/bottom_nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/topLayout"
-        android:background="@color/main"
-        app:cnb_menuResource="@menu/point_menu" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/bottomPoint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/bottom_nav_bar"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/default_bg"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".9"
+            app:layout_constraintStart_toStartOf="parent">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/bottomPoint"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_below="@+id/bottom_nav_bar"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/default_bg"
-        android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".9"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.fragment.app.FragmentContainerView>
-
-
-
-    </LinearLayout>
+        </androidx.fragment.app.FragmentContainerView>
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu" />
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,4 +1,4 @@
-package com.lx.ohmyjuus
+package com.lx.ohmyjuus.point
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import com.lx.ohmyjuus.databinding.ActivityPointBinding
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
+import com.lx.ohmyjuus.*
 
 class PointActivity : AppCompatActivity() {
 

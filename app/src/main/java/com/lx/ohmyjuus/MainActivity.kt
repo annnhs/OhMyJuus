@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +23,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.lx.ohmyjuus.databinding.ActivityMainBinding
 import com.lx.ohmyjuus.jubging.JubgingActivity
+import com.lx.ohmyjuus.point.PointActivity
 import com.lx.ohmyjuus.weather.Adapter.ViewPagerAdapter
 import com.lx.ohmyjuus.weather.Common.Common
 import com.lx.ohmyjuus.weather.TodayWeatherFragment

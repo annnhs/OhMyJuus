@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main"
-    tools:context=".PointViewFragment">
+    tools:context=".point.PointViewFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,14 +33,15 @@
                     android:textStyle="bold" />
 
                 <ImageButton
+                    android:id="@+id/pigButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:background="@null"
+                    android:elevation="10dp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:src="@drawable/ic_piggy"
-                    android:background="@null"
-                    android:elevation="10dp"/>
+                    android:src="@drawable/ic_piggy" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -122,6 +123,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/clothShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"
@@ -150,6 +152,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/plasticShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"
@@ -177,6 +180,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/glassShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"
@@ -246,6 +250,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/cafeShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"
@@ -274,6 +279,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/cultureShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"
@@ -301,6 +307,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
+                                    android:id="@+id/ecoShop"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:alpha=".50"

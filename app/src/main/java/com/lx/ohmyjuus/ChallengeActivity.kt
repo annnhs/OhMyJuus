@@ -7,7 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.lx.ohmyjuus.databinding.ActivityChallengeBinding
-import com.lx.ohmyjuus.databinding.ActivityMainBinding
+import com.lx.ohmyjuus.point.PointActivity
 
 class ChallengeActivity : AppCompatActivity() {
 

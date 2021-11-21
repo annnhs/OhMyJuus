@@ -14,9 +14,10 @@
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/btn_radius_click.xml" value="0.1953125" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/button_state_list_animator.xml" value="0.1953125" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/drawable/jubging_photo.xml" value="0.1953125" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_cafelist.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_calendar.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_challenge.xml" value="0.22" />
-        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_donate.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_donate.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_jubfinish.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_jubging.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -36,6 +37,7 @@
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_point_view.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_pointuse.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_pointview.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/fragment_signup.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/login_tab_fragment.xml" value="0.22" />
         <entry key="..\:/Users/Ahn/AndroidStudioProjects/OhMyJuus/app/src/main/res/layout/nav_header.xml" value="0.22" />

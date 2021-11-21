@@ -38,16 +38,16 @@
     </queries>
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_juus"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_juus_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OhMyJuus">
+        android:theme="@style/Theme.OhMyJuus"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".PointActivity"
+            android:name=".point.PointActivity"
             android:exported="true" />
         <activity
             android:name=".SplashActivity"
@@ -84,7 +84,7 @@
             android:exported="true" />
         <activity
             android:name=".jubging.JubFinishActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".CalendarActivity"
             android:exported="true" />

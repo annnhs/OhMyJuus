@@ -1,19 +1,19 @@
-package com.lx.ohmyjuus
+package com.lx.ohmyjuus.point
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.lx.ohmyjuus.databinding.FragmentPointuseBinding
+import com.lx.ohmyjuus.databinding.FragmentPointviewBinding
 
-class PointUseFragment : Fragment() {
+class PointViewFragment : Fragment() {
 
-    private var _binding: FragmentPointuseBinding? = null
+    private var _binding: FragmentPointviewBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View? {
-        _binding = FragmentPointuseBinding.inflate(inflater, container, false)
+        _binding = FragmentPointviewBinding.inflate(inflater, container, false)
 
         return binding.root
     }
