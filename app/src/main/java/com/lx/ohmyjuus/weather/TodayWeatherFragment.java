@@ -82,7 +82,7 @@ public class TodayWeatherFragment extends Fragment {
         weather_panel = (LinearLayout)itemView.findViewById(R.id.weather_panel);
         loading = (ProgressBar)itemView.findViewById(R.id.loading);
 
-        getWeatherInformation();
+//        getWeatherInformation();
 
         return itemView;
     }

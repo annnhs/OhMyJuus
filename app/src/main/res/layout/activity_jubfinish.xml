@@ -20,7 +20,7 @@
             android:id="@+id/captureImageView"
             android:layout_width="match_parent"
             android:layout_height="480dp"
-            android:background="@drawable/gara6" />
+            android:background="@drawable/gara7" />
 
         <LinearLayout
             android:id="@+id/group1"
