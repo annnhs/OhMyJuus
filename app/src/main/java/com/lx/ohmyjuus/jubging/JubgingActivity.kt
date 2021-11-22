@@ -268,7 +268,11 @@ class JubgingActivity : AppCompatActivity()
 
                 MyUtils.pushNewPoint(location)
                 drawPolyline(latLngList)
+
                 binding.distance.text = String.format("%.2f", MyUtils.totalDist)
+
+
+
 
             }
         }
@@ -298,14 +302,6 @@ class JubgingActivity : AppCompatActivity()
 
                             mService?.removeLocationUpdates()
 
-                            val recordIntent = Intent(this@JubgingActivity, JubFinishActivity::class.java)
-                            recordIntent.putExtra("time", MyUtils.time )
-                            recordIntent.putExtra("distance", String.format("%.2f", MyUtils.totalDist) )
-                            startActivity(recordIntent)
-//                            val intent = Intent().apply {
-//                                putExtra("jubgingInfo", jubgingInfo)
-//                                putExtra("isJubgingOn", true)
-//                            }
                             activity!!.setResult(RESULT_OK, intent)
                             activity!!.finish()
                         }
@@ -542,14 +538,17 @@ class JubgingActivity : AppCompatActivity()
 
     fun clickCapture() {
 
-        val callback = SnapshotReadyCallback { bitmap ->
-            var imagePath = screenshot(bitmap)
-            var imageFile = File(imagePath)
-            var myBitmap = BitmapFactory.decodeFile(imageFile.absolutePath)
-            var myImage = findViewById<ImageView>(R.id.captureImageView)
-            myImage.setImageBitmap(myBitmap)
+//        val callback = SnapshotReadyCallback { bitmap ->
+//            var imagePath = screenshot(bitmap)
+//            var imageFile = File(imagePath)
+//            var myBitmap = BitmapFactory.decodeFile(imageFile.absolutePath)
+//            var myImage = findViewById<ImageView>(R.id.finalImageView)
+//            myImage.setImageBitmap(myBitmap)
+//
+//            }
 
-            }
+        val callback = SnapshotReadyCallback { bitmap -> screenshot(bitmap)
+        }
         mMap?.snapshot(callback)
 
 
@@ -564,6 +563,7 @@ class JubgingActivity : AppCompatActivity()
     }
 
 
+
     fun screenshot(captureBitmap: Bitmap?): String {
         val fos: FileOutputStream
         val file = File("/storage/emulated/0/Pictures/", "Jubging") // 폴더 경로
@@ -572,6 +572,13 @@ class JubgingActivity : AppCompatActivity()
             file.mkdirs()
         }
         val strFilePath = "/storage/emulated/0/Pictures/Jubging/" + System.currentTimeMillis()+".png"
+
+        val filePathIntent = Intent(applicationContext, JubFinishActivity::class.java)
+        filePathIntent.putExtra("filePath", strFilePath)
+        filePathIntent.putExtra("distance", String.format("%.2f", MyUtils.totalDist) )
+        startActivity(filePathIntent)
+
+
 
         val fileCacheItem = File(strFilePath)
         try {

@@ -11,9 +11,18 @@ import android.graphics.Bitmap
 import android.content.Intent
 import android.graphics.ImageDecoder
 import android.location.Location
+import android.net.Uri
 import android.os.Parcelable
+import android.provider.MediaStore
+import android.widget.ImageView
 import com.lx.ohmyjuus.jubging.MyUtils
 import com.lx.ohmyjuus.MainActivity
+import com.lx.ohmyjuus.R
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import android.graphics.BitmapFactory
+import java.lang.Exception
 
 
 class JubFinishActivity: AppCompatActivity() {
@@ -34,15 +43,16 @@ class JubFinishActivity: AppCompatActivity() {
         binding.finishTime.typeface = Typeface.DEFAULT_BOLD
         binding.finishTime.text = MyUtils.time
         binding.finishiDistance.typeface = Typeface.DEFAULT_BOLD
-        //binding.finishiDistance.text = String.format("%.2f", MyUtils.totalDist)
+
+
+
 
 //        binding.finishiDistance.text = intent.extras!!.getString("distance")
 
 //        binding.finishCount.text = intent.getStringExtra("jubCount")
 
-
-//        binding.captureImageView.setImageBitmap()
-
+//
+//        binding.finalImageView
 
 
         binding.goHomeButton.setOnClickListener {
@@ -56,9 +66,23 @@ class JubFinishActivity: AppCompatActivity() {
 
         val intent = intent
 
-        val snapshot = intent.getParcelableExtra<Parcelable>("snapshot") as Bitmap?
 
-        //binding.captureImageView.setImageResource(takeSnapshot)
+        val extras = getIntent().extras
+        val Path = extras?.getString("filePath")
+
+        try {
+            val files = File(Path)
+            if (files.exists() == true) {
+                val myBitmap = BitmapFactory.decodeFile(files.absolutePath)
+                binding.finalImageView.setImageBitmap(myBitmap)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        val finishDist = extras?.getString("distance")
+        println("finishDist: $finishDist")
+        binding.finishiDistance.text = finishDist
+
     }
 
 

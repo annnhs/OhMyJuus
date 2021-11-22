@@ -153,9 +153,6 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = findViewById<View>(R.id.drawerLayout) as DrawerLayout
 
-        //Request permission
-
-        //Request permission
 
         //Request permission
         Dexter.withActivity(this)
@@ -172,9 +169,7 @@ class MainActivity : AppCompatActivity() {
                         fusedLocationProviderClient =
                             LocationServices.getFusedLocationProviderClient(this@MainActivity)
                         fusedLocationProviderClient?.requestLocationUpdates(
-                            locationRequest,
-                            locationCallback,
-                            Looper.myLooper()
+                            locationRequest, locationCallback, Looper.myLooper()
                         )
                     }
                 }
@@ -257,10 +252,10 @@ class MainActivity : AppCompatActivity() {
 //                tabLayout.setupWithViewPager(viewPager);
 
                 // Log
-                Log.d(
-                    "Location",
-                    locationResult.lastLocation.latitude.toString() + "/" + locationResult.lastLocation.longitude
-                )
+//                Log.d(
+//                    "Location",
+//                    locationResult.lastLocation.latitude.toString() + "/" + locationResult.lastLocation.longitude
+//                )
             }
         }
     }
@@ -273,62 +268,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun buildLocationRequest() {
         locationRequest = LocationRequest()
-        locationRequest!!.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-        locationRequest!!.setInterval(5000)
-        locationRequest!!.setFastestInterval(3000)
-        locationRequest!!.setSmallestDisplacement(10.0f)
+        locationRequest?.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+        locationRequest?.setInterval(5000)
+        locationRequest?.setFastestInterval(3000)
+        locationRequest?.setSmallestDisplacement(10.0f)
     }
 
-    fun onLayoutSelected(item: MainActivity.LayoutItem, bundle: Bundle?=null) {
-        when(item) {
-            MainActivity.LayoutItem.MAP -> {
-                binding.toolbar.title = ""
-
-//                binding.layoutFirst.visibility = View.VISIBLE
-//                binding.layoutSecond.visibility = View.GONE
-//                binding.layoutThird.visibility = View.GONE
-//                binding.layoutFourth.visibility = View.GONE
-//                binding.layoutService.visibility = View.GONE
-            }
-//            LayoutItem.SECOND -> {
-//                binding.toolbar.title = ""
-//
-//                binding.layoutFirst.visibility = View.GONE
-//                binding.layoutSecond.visibility = View.VISIBLE
-//                binding.layoutThird.visibility = View.GONE
-//                binding.layoutFourth.visibility = View.GONE
-//                binding.layoutService.visibility = View.GONE
-//            }
-//            LayoutItem.THIRD -> {
-//                binding.toolbar.title = ""
-//
-//                binding.layoutFirst.visibility = View.GONE
-//                binding.layoutSecond.visibility = View.GONE
-//                binding.layoutThird.visibility = View.VISIBLE
-//                binding.layoutFourth.visibility = View.GONE
-//                binding.layoutService.visibility = View.GONE
-//            }
-//            LayoutItem.FOURTH -> {
-//                binding.toolbar.title = ""
-//
-//                binding.layoutFirst.visibility = View.GONE
-//                binding.layoutSecond.visibility = View.GONE
-//                binding.layoutThird.visibility = View.GONE
-//                binding.layoutFourth.visibility = View.VISIBLE
-//                binding.layoutService.visibility = View.GONE
-//
-//            }
-//            LayoutItem.SERVICE -> {
-//                binding.toolbar.title = ""
-//
-//                binding.layoutFirst.visibility = View.GONE
-//                binding.layoutSecond.visibility = View.GONE
-//                binding.layoutThird.visibility = View.GONE
-//                binding.layoutFourth.visibility = View.GONE
-//                binding.layoutService.visibility = View.VISIBLE
-//            }
-        }
-    }
 
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
