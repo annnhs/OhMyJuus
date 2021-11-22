@@ -41,6 +41,7 @@ class JubFinishActivity: AppCompatActivity() {
 //        binding.finishCount.text = intent.getStringExtra("jubCount")
 
 
+//        binding.captureImageView.setImageBitmap()
 
 
 

@@ -17,6 +17,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -541,7 +542,13 @@ class JubgingActivity : AppCompatActivity()
 
     fun clickCapture() {
 
-        val callback = SnapshotReadyCallback { bitmap -> screenshot(bitmap)
+        val callback = SnapshotReadyCallback { bitmap ->
+            var imagePath = screenshot(bitmap)
+            var imageFile = File(imagePath)
+            var myBitmap = BitmapFactory.decodeFile(imageFile.absolutePath)
+            var myImage = findViewById<ImageView>(R.id.captureImageView)
+            myImage.setImageBitmap(myBitmap)
+
             }
         mMap?.snapshot(callback)
 
