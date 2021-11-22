@@ -20,7 +20,7 @@
             android:id="@+id/captureImageView"
             android:layout_width="match_parent"
             android:layout_height="480dp"
-            android:background="@mipmap/ic_juus_round" />
+            android:background="@drawable/gara6" />
 
         <LinearLayout
             android:id="@+id/group1"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="0.05"
+                android:text="0.21"
                 android:textAlignment="center"
                 android:textColor="@color/main"
                 android:textSize="30dp" />

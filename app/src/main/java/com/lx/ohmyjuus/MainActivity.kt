@@ -125,6 +125,11 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
+                R.id.navProfile -> {
+                    val intent = Intent(this, MyPageActivity::class.java)
+                    startActivity(intent)
+
+                }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
@@ -329,7 +334,7 @@ class MainActivity : AppCompatActivity() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+//            super.onBackPressed()
         }
     }
 

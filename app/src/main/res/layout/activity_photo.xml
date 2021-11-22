@@ -32,13 +32,12 @@
                 android:textSize="10pt"
                 android:textStyle="bold" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/selectedImageView"
                 android:layout_width="280dp"
                 android:layout_height="260dp"
                 android:layout_gravity="center"
-                android:background="@color/white"
-                android:src="@drawable/jubging_photo" />
+                android:background="@drawable/jubging_photo" />
 
             <Button
                 android:id="@+id/takePictureButton"

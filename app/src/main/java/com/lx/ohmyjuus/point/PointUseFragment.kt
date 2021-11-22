@@ -18,37 +18,37 @@ class PointUseFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View? {
         _binding = FragmentPointuseBinding.inflate(inflater, container, false)
 
-        pigButton.setOnClickListener {
+        binding.pigButton.setOnClickListener {
             val intent = Intent(getActivity(), DonateActivity::class.java)
             startActivity(intent)
         }
 
-        clothShop.setOnClickListener {
+        binding.clothShop.setOnClickListener {
             val intent = Intent(getActivity(), ShopdetailActivity::class.java)
             startActivity(intent)
         }
 
-        plasticShop.setOnClickListener {
+        binding.plasticShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
         }
 
-        glassShop.setOnClickListener {
+        binding.glassShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
         }
 
-        cafeShop.setOnClickListener {
+        binding.cafeShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
         }
 
-        cultureShop.setOnClickListener {
+        binding.cultureShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
         }
 
-        ecoShop.setOnClickListener {
+        binding.ecoShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
         }

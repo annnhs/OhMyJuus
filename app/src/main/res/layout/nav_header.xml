@@ -27,7 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="95dp"
         android:layout_marginTop="20dp"
-        android:text="anhs"
+        android:text="호성"
         android:textColor="@color/black"
         android:textSize="24sp" />
 

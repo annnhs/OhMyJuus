@@ -217,7 +217,7 @@
                                                     android:id="@+id/mainRecord1"
                                                     android:layout_width="100dp"
                                                     android:layout_height="100dp"
-                                                    android:background="@drawable/gara1"
+                                                    android:background="@drawable/gara6"
                                                     android:scaleType="fitXY" />
 
                                                 <TextView

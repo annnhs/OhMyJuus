@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:src="@drawable/ic_hambur" />
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:padding="20dp"-->
+<!--            android:background="#4C9FC4">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/profile_image"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:src="drawable/profile_image"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/full_name"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginLeft="19dp"-->
+<!--                android:layout_toRightOf="@+id/profile_image"-->
+<!--                android:fontFamily="@font/"-->
+<!--                android:includeFontPadding="false"-->
+<!--                android:text="안녕하세요 김어스님"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textSize="20sp"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/full_name"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@+id/profile_image"-->
+<!--                android:includeFontPadding="false"-->
+<!--                android:text="안녕하세요"-->
+<!--                android:textSize="14sp"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="20dp"-->
+<!--            android:layout_marginTop="-100dp"-->
+<!--            >-->
+
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardBackgroundColor="#365D92"-->
+<!--                android:layout_margin="10dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="5dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:src="@drawable/payment_icon"-->
+<!--                        android:layout_centerHorizontal="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/payment_label"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="$123"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:fontFamily="@font/bungee"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Balance"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:layout_below="@+id/"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardBackgroundColor="#365D92"-->
+<!--                android:layout_margin="10dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="5dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:src="@drawable/payment_icon"-->
+<!--                        android:layout_centerHorizontal="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/payment_label"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="$123"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:fontFamily="@font/bungee"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/payment_desc"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Balance"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:layout_below="@+id/payment_label"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardBackgroundColor="#365D92"-->
+<!--                android:layout_margin="10dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="5dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:src="@drawable/payment_icon"-->
+<!--                        android:layout_centerHorizontal="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/booking_label"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="$123"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:fontFamily="@font/bungee"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/booking_desc"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Booking"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:layout_below="@+id/booking_label"-->
+<!--                        android:layout_centerInParent="true"/>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="20dp"-->
+<!--            android:orientation="vertical"-->
+<!--            >-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="나이"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableLeft="@drawable/"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:text="100"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="키"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableLeft="@drawable/"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:text="100"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="몸무게"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableLeft="@drawable/"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:text="비밀"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="포인트"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableLeft="@drawable/"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:text="1000"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="총 거리"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableLeft="@drawable/"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:text="1000"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="회원정보수정"-->
+<!--                android:background="#4C9FC4"/>-->
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

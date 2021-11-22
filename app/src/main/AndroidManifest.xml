@@ -91,6 +91,9 @@
         <activity
             android:name=".jubging.PhotoActivity"
             android:exported="true" />
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="true" />
 
         <service
             android:name=".jubging.MyService"
