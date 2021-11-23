@@ -60,7 +60,7 @@ class MyUtils {
 
         fun stopJubging() {
             s = 0; m = 0; h = 0
-            totalDist = 0.0
+//            totalDist = 0.0
             startToggle = false
             timerTask?.cancel()
             timerTask = null

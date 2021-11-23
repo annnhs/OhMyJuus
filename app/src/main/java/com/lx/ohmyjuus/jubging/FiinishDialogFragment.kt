@@ -22,13 +22,16 @@ class FiinishDialogFragment(private val listener: OnClickDialogListener): Dialog
             val builder = AlertDialog.Builder(it)
             builder.setMessage("줍깅을 종료할까요?")
                 .setPositiveButton("예") { dialog, id ->
+
+
+
                     MyUtils.stopJubging()
 
                     MyUtils.capture()
 
 
-                    val intent = Intent(activity, JubFinishActivity::class.java)
-                    startActivity(intent)
+//                    val intent = Intent(activity, JubFinishActivity::class.java)
+//                    startActivity(intent)
 
 
                 }

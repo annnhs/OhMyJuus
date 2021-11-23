@@ -17,16 +17,16 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/captureImageView"
+            android:id="@+id/finalImageView"
             android:layout_width="match_parent"
             android:layout_height="480dp"
-            android:background="@drawable/gara6" />
+            android:background="@mipmap/ic_juus" />
 
         <LinearLayout
             android:id="@+id/group1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/captureImageView"
+            android:layout_below="@id/finalImageView"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:orientation="horizontal">

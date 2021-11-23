@@ -1,6 +1,7 @@
 package com.lx.ohmyjuus.point
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +54,14 @@ class PointUseFragment : Fragment() {
         binding.ecoShop.setOnClickListener {
             val intent = Intent(getActivity(), MainActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.goDonate.setOnClickListener {
+            val goDonate = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.greenpeace.org/korea/about/overview/")
+            )
+            startActivity(goDonate)
         }
 
         return binding.root

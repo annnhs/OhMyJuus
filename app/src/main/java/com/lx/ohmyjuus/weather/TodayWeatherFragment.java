@@ -64,6 +64,7 @@ public class TodayWeatherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getWeatherInformation();
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_today_weather, container, false);
 
@@ -82,7 +83,7 @@ public class TodayWeatherFragment extends Fragment {
         weather_panel = (LinearLayout)itemView.findViewById(R.id.weather_panel);
         loading = (ProgressBar)itemView.findViewById(R.id.loading);
 
-        getWeatherInformation();
+
 
         return itemView;
     }
