@@ -3,15 +3,15 @@ package com.lx.ohmyjuus.point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lx.ohmyjuus.R
-import com.lx.ohmyjuus.databinding.ActivityShopdetailBinding
+import com.lx.ohmyjuus.databinding.ActivityShopPlasticDetailBinding
 
-class ShopdetailActivity : AppCompatActivity() {
+class ShopGlassDetailActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityShopdetailBinding
+    lateinit var binding: ActivityShopPlasticDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShopdetailBinding.inflate(layoutInflater)
+        binding = ActivityShopPlasticDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
     }

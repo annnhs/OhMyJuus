@@ -47,6 +47,12 @@
         android:theme="@style/Theme.OhMyJuus"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".point.ShopGlassDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".point.ShopPlasticDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".point.PointActivity"
             android:exported="true" />
         <activity
@@ -73,9 +79,7 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

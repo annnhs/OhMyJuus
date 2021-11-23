@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.lx.ohmyjuus.api.JUUSClient
+import com.lx.ohmyjuus.databinding.ActivityLoginBinding
 import com.lx.ohmyjuus.response.LoginRes
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.loginId
@@ -19,14 +20,15 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     val TAG: String = "LoginActivity"
-
+    lateinit var binding: ActivityLoginBinding
 
 //    쉐어드로부터 저장된 id, pw 가져오기
 //    val sharedPrefs : SharedPreferences = applicationContext.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         if(SharedPreferences.getUserId(this).isNullOrBlank() || SharedPreferences.getUserPass(this).isNullOrBlank()) {
             logInButton.setOnClickListener {
@@ -57,12 +59,30 @@ class LoginActivity : AppCompatActivity() {
                 call: Call<LoginRes>,
                 response: Response<LoginRes>
             ) {
-                println("userLogin onResponse called : ${response.body()?.output.toString()}")
+                val userData : LoginRes? = response.body()
+                println("userLogin onResponse called : ${userData.toString()}")
 
-//                var userData = response.body()?.output
-//                userData.apply {
+                if(userData!=null) {
+                    if(userData.output.isNotEmpty()) {
+                        // 값 저장
+//                        val sharedPreferences = getSharedPreferences("mine", 0)
+//                        val editor = sharedPreferences.edit()
+//                        editor.putString("id",  binding.loginId.text.toString())
+//                        editor.putInt("loginCheck",  1)
+//                        editor.putString("nickname", userData.output.get(0).nickname)
+//                        editor.putString("sex", userData.output.get(0).sex)
+//                        editor.apply()
+//                        Log.d("LoginActivity loginCheck", sharedPreferences?.getInt("loginCheck", 0).toString())
 //
-//                }
+//                        Toast.makeText(applicationContext, "${userData.output.get(0).nickname}님 환영합니다", Toast.LENGTH_SHORT).show()
+//                        startActivity(intent)
+
+                    }else {
+                        Toast.makeText(applicationContext, "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show()
+
+                    }
+                }
+
             }
             override fun onFailure(call: Call<LoginRes>, t: Throwable) {
                 println("login onFailure 호출됨")

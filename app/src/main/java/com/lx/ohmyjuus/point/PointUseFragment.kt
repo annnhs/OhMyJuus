@@ -24,17 +24,19 @@ class PointUseFragment : Fragment() {
         }
 
         binding.clothShop.setOnClickListener {
-            val intent = Intent(getActivity(), ShopdetailActivity::class.java)
-            startActivity(intent)
+            activity?.let {
+                val intent = Intent(context, ShopdetailActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.plasticShop.setOnClickListener {
-            val intent = Intent(getActivity(), MainActivity::class.java)
+            val intent = Intent(getActivity(), ShopPlasticDetailActivity::class.java)
             startActivity(intent)
         }
 
         binding.glassShop.setOnClickListener {
-            val intent = Intent(getActivity(), MainActivity::class.java)
+            val intent = Intent(getActivity(), ShopGlassDetailActivity::class.java)
             startActivity(intent)
         }
 
