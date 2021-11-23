@@ -50,13 +50,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="호성" />
+                    android:text="" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="의 포인트" />
+                    android:text="" />
 
             </LinearLayout>
 
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:paddingBottom="30dp"
-                android:text="  1450 P"
+                android:text=" "
                 android:textColor="@color/main"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -20,7 +20,7 @@ class FiinishDialogFragment(private val listener: OnClickDialogListener): Dialog
 
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            builder.setMessage("줍깅을 종료할까요?")
+            builder.setMessage("주어스를 종료할까요?")
                 .setPositiveButton("예") { dialog, id ->
 
 

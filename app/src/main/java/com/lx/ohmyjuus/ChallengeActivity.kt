@@ -67,6 +67,20 @@ class ChallengeActivity : AppCompatActivity() {
 
         }
 
+        binding.progressBar01.progress=90
+        binding.progressBar02.progress=80
+        binding.progressBar03.progress=60
+        binding.progressBar04.progress=60
+        binding.progressBar05.progress=30
+        binding.progressBar06.progress=20
+        binding.progressBar07.progress=10
+
+
+        binding.progressBar08.progress=0
+
 
     }
+
+
+
 }

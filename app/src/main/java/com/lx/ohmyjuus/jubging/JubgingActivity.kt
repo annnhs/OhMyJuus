@@ -114,7 +114,7 @@ class JubgingActivity : AppCompatActivity()
         binding.time.typeface = Typeface.DEFAULT_BOLD
         //binding.distance.text = String.format("%.2f", MyUtils.totalDist)
         binding.distance.typeface = Typeface.DEFAULT_BOLD
-        binding.btnStart.text = if (!MyUtils.startToggle) "줍깅 시작" else "줍깅 종료"
+        binding.btnStart.text = if (!MyUtils.startToggle) "주어스 시작" else "주어스 종료"
         MyUtils.activity = this
 //
         if (!checkPermissions()) requestPermissions()
@@ -296,7 +296,7 @@ class JubgingActivity : AppCompatActivity()
                     } else {
                         changeCallback(locCallback, locCallback_walk, true)
                         mService!!.requestLocationUpdates()
-                        binding.btnStart.text = "줍깅 종료"
+                        binding.btnStart.text = "주어스 종료"
                         MyUtils.startJubging()
 
 1

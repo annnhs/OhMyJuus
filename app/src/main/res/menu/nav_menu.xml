@@ -8,15 +8,15 @@
         android:background="@drawable/shadow">
         <item
             android:id="@+id/navMain"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_main"
             android:title="메인화면으로" />
         <item
             android:id="@+id/navPoint"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_point"
             android:title="포인트" />
         <item
             android:id="@+id/navChallenge"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_challenge"
             android:title="챌린지" />
 <!--        <item-->
 <!--            android:id="@+id/navCommunity"-->
@@ -24,15 +24,15 @@
 <!--            android:title="커뮤니티" />-->
         <item
             android:id="@+id/navMap"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_map"
             android:title="내 주변" />
         <item
             android:id="@+id/navRecord"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_record"
             android:title="기록" />
         <item
             android:id="@+id/navProfile"
-            android:icon="@drawable/img_map"
+            android:icon="@drawable/ham_mypage"
             android:title="마이페이지" />
     </group>
 
