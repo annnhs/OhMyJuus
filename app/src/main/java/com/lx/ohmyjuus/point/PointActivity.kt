@@ -90,9 +90,8 @@ class PointActivity : AppCompatActivity() {
                 }
             }
         }.run {
-            var pointuseFrag = PointUseFragment()
-            supportFragmentManager.beginTransaction().replace(R.id.bottomPoint, pointuseFrag)
-                .commit()
+            var pointviewFrag = PointViewFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.bottomPoint, pointviewFrag).commit()
         }
     }
 

@@ -46,6 +46,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OhMyJuus"
         android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".point.ShopdetailActivity"
+            android:exported="true" />
+
         <activity
             android:name=".point.ShopGlassDetailActivity"
             android:exported="true" />
