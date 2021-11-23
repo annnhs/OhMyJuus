@@ -30,13 +30,20 @@ import com.google.android.gms.maps.model.*
 import com.google.android.material.snackbar.Snackbar
 import com.lx.ohmyjuus.MainActivity
 import com.lx.ohmyjuus.R
+import com.lx.ohmyjuus.api.JUUSClient
 import com.lx.ohmyjuus.databinding.ActivityJubgingBinding
 import com.lx.ohmyjuus.jubging.MyUtils.Companion.activity
+import com.lx.ohmyjuus.response.MapRes
 import kotlinx.android.synthetic.main.activity_calendar.*
 import java.io.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.*
+
+
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 
@@ -53,6 +60,8 @@ class JubgingActivity : AppCompatActivity()
     private var mService: MyService? = null
     private var mBound = false
     private var isTracking = true
+
+    private var count = 0
 
     //myservice 받아오기
     private var mServiceConnection = object : ServiceConnection {
@@ -324,7 +333,7 @@ class JubgingActivity : AppCompatActivity()
 //                if (isTracking) {
 //                    isTracking = false
 //                    binding.btnTracking.background = getDrawable(R.drawable.ic_baseline_gps_not_fixed_24)
-//                } else {
+//                } else {ㅐㅜㅡ메
 //                    isTracking = true
 //
 
@@ -460,6 +469,9 @@ class JubgingActivity : AppCompatActivity()
 
         setCurMarker()
 
+        showTrashPinPoint("일반쓰레기통")
+        showRecyclePinPoint("재활용쓰레기통")
+        showUpcyclePinPoint("업사이클링매장")
 
         mMap?.setOnMarkerClickListener(this)
 
@@ -552,14 +564,7 @@ class JubgingActivity : AppCompatActivity()
         mMap?.snapshot(callback)
 
 
-//        val capIntent = Intent(applicationContext, JubFinishActivity::class.java)
-//        capIntent.putExtra("snapshot", textView)
 
-//        val goHome = Intent(applicationContext, MainActivity::class.java)
-//        startActivity(goHome)
-
-//        if (latLngList.size > 0) latLngList.clear()
-//        if (polyline != null) polyline!!.remove()
     }
 
 
@@ -576,6 +581,11 @@ class JubgingActivity : AppCompatActivity()
         val filePathIntent = Intent(applicationContext, JubFinishActivity::class.java)
         filePathIntent.putExtra("filePath", strFilePath)
         filePathIntent.putExtra("distance", String.format("%.2f", MyUtils.totalDist) )
+
+        val count = count + 1
+        filePathIntent.putExtra("count", count)
+
+
         startActivity(filePathIntent)
 
 
@@ -598,6 +608,105 @@ class JubgingActivity : AppCompatActivity()
 //        startActivity(imageIntent)
 
         return strFilePath
+    }
+
+
+
+
+    fun showTrashPinPoint(type: String) {
+//        val point = "POINT(${location.longitude} ${location.latitude})"
+
+        // 웹서버로 리스트 요청
+        JUUSClient.api.getTrashPoint(
+            type = type
+
+        ).enqueue(object: Callback<MapRes> {
+            override fun onResponse(call: Call<MapRes>, response: Response<MapRes>) {
+                println("showTrashPoint onResponse 호출됨")
+
+
+                var items = response.body()?.data
+                items?.apply {
+                    for (item in this) {
+                        val trashPointMarker = MarkerOptions()
+                        with(trashPointMarker) {
+                            position(LatLng(item.latitude!!, item.longitude!!))
+                            icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_recyclepin))
+                            mMap?.addMarker(this)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<MapRes>, t: Throwable) {
+                println("showTrashPoint onFailure 호출됨")
+            }
+
+        })
+    }
+
+    fun showRecyclePinPoint(type: String) {
+//        val point = "POINT(${location.longitude} ${location.latitude})"
+
+        // 웹서버로 리스트 요청
+        JUUSClient.api.getTrashPoint(
+            type = type
+
+        ).enqueue(object: Callback<MapRes> {
+            override fun onResponse(call: Call<MapRes>, response: Response<MapRes>) {
+                println("showRecyclePinPoint onResponse 호출됨")
+
+
+                var items = response.body()?.data
+                items?.apply {
+                    for (item in this) {
+                        val trashPointMarker = MarkerOptions()
+                        with(trashPointMarker) {
+                            position(LatLng(item.latitude!!, item.longitude!!))
+                            icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_trashpin))
+                            mMap?.addMarker(this)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<MapRes>, t: Throwable) {
+                println("showRecyclePinPoint onFailure 호출됨")
+            }
+
+        })
+    }
+
+    fun showUpcyclePinPoint(type: String) {
+//        val point = "POINT(${location.longitude} ${location.latitude})"
+
+        // 웹서버로 리스트 요청
+        JUUSClient.api.getTrashPoint(
+            type = type
+
+        ).enqueue(object: Callback<MapRes> {
+            override fun onResponse(call: Call<MapRes>, response: Response<MapRes>) {
+                println("showUpcyclePinPoint onResponse 호출됨")
+
+
+                var items = response.body()?.data
+                items?.apply {
+                    for (item in this) {
+                        val trashPointMarker = MarkerOptions()
+                        with(trashPointMarker) {
+                            position(LatLng(item.latitude!!, item.longitude!!))
+                            icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_shoppin))
+                            mMap?.addMarker(this)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<MapRes>, t: Throwable) {
+                println("showUpcyclePinPoint onFailure 호출됨")
+            }
+
+        })
     }
 
 }

@@ -84,7 +84,9 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="3 명"
-                        android:textColor="@color/main"/>
+                        android:textSize="15dp"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -99,8 +101,10 @@
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
                         android:padding="5dp"
+                        android:textSize="15dp"
+                        android:textStyle="italic"
                         android:text="1500 P"
-                        android:textColor="#FFC107" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="match_parent"

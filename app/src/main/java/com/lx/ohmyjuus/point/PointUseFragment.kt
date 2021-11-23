@@ -25,10 +25,8 @@ class PointUseFragment : Fragment() {
         }
 
         binding.clothShop.setOnClickListener {
-            activity?.let {
-                val intent = Intent(context, ShopdetailActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(getActivity(), ShopdetailActivity::class.java)
+            startActivity(intent)
         }
 
         binding.plasticShop.setOnClickListener {

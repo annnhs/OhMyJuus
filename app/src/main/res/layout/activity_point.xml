@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:paddingBottom="30dp"
-                    android:text="14500 P"
+                    android:text="1450 P"
                     android:textColor="@color/main"
                     android:textSize="20dp"
                     android:textStyle="bold" />

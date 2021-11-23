@@ -5,12 +5,14 @@
 
     <item
         android:id="@+id/pointView"
-        android:title="조회"
+        android:icon="@drawable/point_view_txt"
+        android:title=""
         app:cnb_iconColor="@color/white" />
 
     <item
         android:id="@+id/pointUse"
-        android:title="사용처"
+        android:icon="@drawable/point_use_txt"
+        android:title=""
         app:cnb_iconColor="@color/white" />
 <!--    <item-->
 <!--        android:id="@+id/pointUse"-->
