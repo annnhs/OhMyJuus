@@ -383,145 +383,124 @@
                                 android:orientation="horizontal"
                                 android:padding="5dp">
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:orientation="vertical">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
 
-                                    <ImageButton
-                                        android:id="@+id/mainChallenge1"
-                                        android:layout_width="80dp"
-                                        android:layout_height="80dp"
-                                        android:background="@color/main"
-                                        android:padding="15dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/ic_badge02" />
+                                    <ProgressBar
+                                        android:id="@+id/MainProgress01"
+                                        style="@style/CircularDeterminateProgressBar"
+                                        tools:progress="90"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.1" />
 
+                                    <ImageView
+                                        android:id="@+id/badge01"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_badge01"
+                                        app:layout_constraintBottom_toBottomOf="@+id/MainProgress01"
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress01"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress01"
+                                        app:layout_constraintTop_toTopOf="@+id/MainProgress01" />
 
                                     <TextView
-                                        android:id="@+id/mainChallTextView1"
-                                        android:layout_width="match_parent"
+                                        android:id="@+id/textView"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="리사이클 마스터"
+                                        android:text="업사이클 매장 10회 이용"
                                         android:textColor="@color/white"
-                                        android:textSize="11sp"
-                                        android:textStyle="bold"/>
-<!--                                    <ProgressBar-->
-<!--                                        android:id="@+id/mainProgress1"-->
-<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="wrap_content"-->
-<!--                                        android:layout_gravity="center"-->
-<!--                                        android:elevation="5dp"-->
-<!--                                        android:progress="70"-->
-<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress01"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress01"
+                                        app:layout_constraintTop_toBottomOf="@+id/MainProgress01" />
 
-                                </LinearLayout>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:orientation="vertical"
-                                    android:paddingLeft="20dp">
+                                    android:layout_marginLeft="10dp">
 
-                                    <ImageButton
-                                        android:id="@+id/mainChallenge2"
-                                        android:layout_width="80dp"
-                                        android:layout_height="80dp"
-                                        android:background="@color/main"
-                                        android:padding="15dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/ic_badge05" />
+                                    <ProgressBar
+                                        android:id="@+id/MainProgress02"
+                                        style="@style/CircularDeterminateProgressBar"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.1"
+                                        tools:progress="80" />
+
+                                    <ImageView
+                                        android:id="@+id/badge02"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_badge02"
+                                        app:layout_constraintBottom_toBottomOf="@+id/MainProgress02"
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress02"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress02"
+                                        app:layout_constraintTop_toTopOf="@+id/MainProgress02" />
 
                                     <TextView
-                                        android:id="@+id/mainChallTextView2"
-                                        android:layout_width="match_parent"
+                                        android:id="@+id/textView4"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="이번달 주어스왕"
+                                        android:text="줍깅 50번 하기"
                                         android:textColor="@color/white"
-                                        android:textSize="11sp"
-                                        android:textStyle="bold"/>
-<!--                                    <ProgressBar-->
-<!--                                        android:id="@+id/mainProgress2"-->
-<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="wrap_content"-->
-<!--                                        android:layout_gravity="center"-->
-<!--                                        android:elevation="5dp"-->
-<!--                                        android:progress="60"-->
-<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress02"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress02"
+                                        app:layout_constraintTop_toBottomOf="@+id/MainProgress02" />
 
-                                </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--                                <LinearLayout-->
-<!--                                    android:layout_width="match_parent"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:gravity="center_vertical"-->
-<!--                                    android:orientation="vertical"-->
-<!--                                    android:paddingLeft="20dp">-->
-
-<!--                                    <ImageButton-->
-<!--                                        android:id="@+id/mainChallenge3"-->
-<!--                                        android:layout_width="80dp"-->
-<!--                                        android:layout_height="80dp"-->
-<!--                                        android:background="@color/main"-->
-<!--                                        android:padding="15dp"-->
-<!--                                        android:scaleType="fitXY"-->
-<!--                                        android:src="@drawable/ic_badge07" />-->
-
-<!--                                    <ProgressBar-->
-<!--                                        android:id="@+id/mainProgress3"-->
-<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="wrap_content"-->
-<!--                                        android:layout_gravity="center_vertical"-->
-<!--                                        android:elevation="5dp"-->
-<!--                                        android:progress="40"-->
-<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
-
-<!--                                </LinearLayout>-->
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:orientation="vertical"
-                                    android:paddingLeft="20dp">
+                                    android:layout_marginLeft="10dp">
 
-                                    <ImageButton
-                                        android:id="@+id/mainChallenge4"
-                                        android:layout_width="80dp"
-                                        android:layout_height="80dp"
-                                        android:background="@color/main"
-                                        android:padding="11dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/ic_badge09" />
+                                    <ProgressBar
+                                        android:id="@+id/MainProgress03"
+                                        style="@style/CircularDeterminateProgressBar"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.1"
+                                        tools:progress="60" />
+
+                                    <ImageView
+                                        android:id="@+id/badge03"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_badge09"
+                                        app:layout_constraintBottom_toBottomOf="@+id/MainProgress03"
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress03"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress03"
+                                        app:layout_constraintTop_toTopOf="@+id/MainProgress03" />
 
                                     <TextView
-                                        android:id="@+id/mainChallTextView4"
-                                        android:layout_width="match_parent"
+                                        android:id="@+id/textView2"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center|center_horizontal|center_vertical"
-                                        android:paddingLeft="8dp"
-                                        android:text="기부 5회 달성"
+                                        android:text="어스 저금통 10회 하기"
                                         android:textColor="@color/white"
-                                        android:textSize="11sp"
-                                        android:textStyle="bold" />
+                                        app:layout_constraintEnd_toEndOf="@+id/MainProgress03"
+                                        app:layout_constraintStart_toStartOf="@+id/MainProgress03"
+                                        app:layout_constraintTop_toBottomOf="@+id/MainProgress03" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                                    <!--                                    <ProgressBar-->
-<!--                                        android:id="@+id/mainProgress4"-->
-<!--                                        style="?android:attr/progressBarStyleHorizontal"-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="wrap_content"-->
-<!--                                        android:layout_gravity="center_vertical"-->
-<!--                                        android:elevation="5dp"-->
-<!--                                        android:progress="20"-->
-<!--                                        android:progressDrawable="@drawable/custom_progressbar" />-->
-
-                                </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"

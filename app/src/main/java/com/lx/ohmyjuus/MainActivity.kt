@@ -184,6 +184,10 @@ class MainActivity : AppCompatActivity() {
             }).check()
 
 
+        //줍깅 progress(정은빈)
+        binding.MainProgress01.progress = 90
+        binding.MainProgress02.progress=80
+        binding.MainProgress03.progress=60
 
         //줍깅 캠페인(이정환)
         binding.goSite1.setOnClickListener {
