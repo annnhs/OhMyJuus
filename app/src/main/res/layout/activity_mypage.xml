@@ -11,290 +11,234 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="20dp"
-            android:src="@drawable/ic_hambur" />
+            android:orientation="vertical"
+            android:background="@color/main">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/main"
+                android:padding="20dp"
+                android:src="@drawable/ic_hambur" />
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="300dp"-->
-<!--            android:padding="20dp"-->
-<!--            android:background="#4C9FC4">-->
+        </LinearLayout>
 
-<!--            <ImageView-->
-<!--                android:id="@+id/profile_image"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:src="drawable/profile_image"/>-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-<!--            <TextView-->
-<!--                android:id="@+id/full_name"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="19dp"-->
-<!--                android:layout_toRightOf="@+id/profile_image"-->
-<!--                android:fontFamily="@font/"-->
-<!--                android:includeFontPadding="false"-->
-<!--                android:text="안녕하세요 김어스님"-->
-<!--                android:textColor="#ffffff"-->
-<!--                android:textSize="20sp"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/full_name"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_toRightOf="@+id/profile_image"-->
-<!--                android:includeFontPadding="false"-->
-<!--                android:text="안녕하세요"-->
-<!--                android:textSize="14sp"/>-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mypage_bg">
 
-<!--        </RelativeLayout>-->
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="20dp"-->
-<!--            android:layout_marginTop="-100dp"-->
-<!--            >-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
 
-<!--            <com.google.android.material.card.MaterialCardView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="125dp"-->
-<!--                android:layout_weight="1"-->
-<!--                app:cardBackgroundColor="#365D92"-->
-<!--                android:layout_margin="10dp">-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="안녕하세요"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:padding="5dp">-->
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="30dp"-->
-<!--                        android:layout_height="30dp"-->
-<!--                        android:src="@drawable/payment_icon"-->
-<!--                        android:layout_centerHorizontal="true"/>-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/payment_label"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="$123"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="20sp"-->
-<!--                        android:fontFamily="@font/bungee"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="호성 님 !!"
+                                android:textColor="@color/white"
+                                android:textSize="25dp"
+                                android:textStyle="bold" />
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Balance"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="14sp"-->
-<!--                        android:layout_below="@+id/"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                        </LinearLayout>
 
-<!--                </RelativeLayout>-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-<!--            </com.google.android.material.card.MaterialCardView>-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="생일"
+                                android:textSize="18dp" />
 
-<!--            <com.google.android.material.card.MaterialCardView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="125dp"-->
-<!--                android:layout_weight="1"-->
-<!--                app:cardBackgroundColor="#365D92"-->
-<!--                android:layout_margin="10dp">-->
+                            <TextView
+                                android:id="@+id/maypageBirth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1996. 01. 01"
+                                android:textSize="18dp" />
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:padding="5dp">-->
+                        </LinearLayout>
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="30dp"-->
-<!--                        android:layout_height="30dp"-->
-<!--                        android:src="@drawable/payment_icon"-->
-<!--                        android:layout_centerHorizontal="true"/>-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/payment_label"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="$123"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="20sp"-->
-<!--                        android:fontFamily="@font/bungee"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="키"
+                                android:textSize="18dp" />
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/payment_desc"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Balance"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="14sp"-->
-<!--                        android:layout_below="@+id/payment_label"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                            <TextView
+                                android:id="@+id/mypageHeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="190cm"
+                                android:textSize="18dp" />
 
-<!--                </RelativeLayout>-->
+                        </LinearLayout>
 
-<!--            </com.google.android.material.card.MaterialCardView>-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-<!--            <com.google.android.material.card.MaterialCardView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="125dp"-->
-<!--                android:layout_weight="1"-->
-<!--                app:cardBackgroundColor="#365D92"-->
-<!--                android:layout_margin="10dp">-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="몸무게"
+                                android:textSize="18dp" />
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:padding="5dp">-->
+                            <TextView
+                                android:id="@+id/mypageWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75kg"
+                                android:textSize="18dp" />
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="30dp"-->
-<!--                        android:layout_height="30dp"-->
-<!--                        android:src="@drawable/payment_icon"-->
-<!--                        android:layout_centerHorizontal="true"/>-->
+                        </LinearLayout>
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/booking_label"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="$123"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="20sp"-->
-<!--                        android:fontFamily="@font/bungee"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/booking_desc"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Booking"-->
-<!--                        android:includeFontPadding="false"-->
-<!--                        android:textSize="20sp"-->
-<!--                        android:layout_below="@+id/booking_label"-->
-<!--                        android:layout_centerInParent="true"/>-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="총 포인트"
+                                android:textSize="18dp" />
 
-<!--                </RelativeLayout>-->
+                            <TextView
+                                android:id="@+id/mypagePoint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1450 P"
+                                android:textSize="18dp" />
 
-<!--            </com.google.android.material.card.MaterialCardView>-->
+                        </LinearLayout>
 
-<!--        </LinearLayout>-->
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/btn_radius_grey"
+                            android:text="회원정보 수정"
+                            android:textColor="@color/white"/>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="20dp"-->
-<!--            android:orientation="vertical"-->
-<!--            >-->
+                    </LinearLayout>
+                </RelativeLayout>
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="나이"-->
-<!--                android:layout_marginBottom="10dp">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:background="@color/white">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableLeft="@drawable/"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:text="100"/>-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_margin="20dp"
+                        android:padding="10dp">
 
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="몸무게" />
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="키" />
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="키"-->
-<!--                android:layout_marginBottom="10dp">-->
+                    </LinearLayout>
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableLeft="@drawable/"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:text="100"/>-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="BMI 결과"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
 
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_radius_grey"
+                        android:text="BMI 계산하기"
+                        android:textSize="20dp"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"/>
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="몸무게"-->
-<!--                android:layout_marginBottom="10dp">-->
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableLeft="@drawable/"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:text="비밀"/>-->
+                </LinearLayout>
 
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="포인트"-->
-<!--                android:layout_marginBottom="10dp">-->
-
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableLeft="@drawable/"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:text="1000"/>-->
-
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="총 거리"-->
-<!--                android:layout_marginBottom="10dp">-->
-
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:drawableLeft="@drawable/"-->
-<!--                    android:drawablePadding="10dp"-->
-<!--                    android:text="1000"/>-->
-
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--            <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="회원정보수정"-->
-<!--                android:background="#4C9FC4"/>-->
-
-<!--        </LinearLayout>-->
-<!--    </LinearLayout>-->
-
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
-
 
 
     <com.google.android.material.navigation.NavigationView
